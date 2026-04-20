@@ -1,0 +1,104 @@
+.converter-widget { margin-top: 4px; }
+
+.conv-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.conv-field {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px;
+  border-radius: 14px;
+}
+
+.conv-field.result {
+  background: rgba(212, 175, 55, 0.05);
+  border-color: rgba(212, 175, 55, 0.15);
+}
+
+.conv-flag { font-size: 20px; }
+
+.conv-input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 700;
+  outline: none;
+  width: 60px;
+  font-family: inherit;
+}
+
+.conv-input::-webkit-inner-spin-button,
+.conv-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.conv-result {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.conv-code {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.conv-swap-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.conv-currencies {
+  display: flex;
+  gap: 6px;
+  margin-top: 12px;
+  overflow-x: auto;
+  padding: 2px 0;
+}
+
+.conv-chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  white-space: nowrap;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.conv-chip.active {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.conv-rate-label {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 10px;
+}

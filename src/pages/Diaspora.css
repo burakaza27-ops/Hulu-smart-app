@@ -1,0 +1,408 @@
+/* ===== DIASPORA BANNER ===== */
+.diaspora-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(212, 175, 55, 0.05) 100%);
+  border-color: rgba(16, 185, 129, 0.15);
+}
+
+.banner-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(16, 185, 129, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-emerald);
+  flex-shrink: 0;
+}
+
+.banner-text h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.banner-text p {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.diaspora-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+/* ===== TABS ===== */
+.diaspora-tabs {
+  display: flex;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: 4px;
+  margin-bottom: 6px;
+  border: 1px solid var(--border-subtle);
+}
+
+.dia-tab {
+  flex: 1;
+  position: relative;
+  padding: 12px 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  border-radius: 12px;
+  z-index: 1;
+  transition: color 0.2s;
+}
+
+.dia-tab.active {
+  color: var(--text-primary);
+}
+
+.tab-indicator {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-highlight);
+  border-radius: 12px;
+  z-index: -1;
+}
+
+/* ===== SERVICE PAYMENT GRID ===== */
+.service-pay-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.service-pay-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+  cursor: pointer;
+  position: relative;
+}
+
+.svc-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svc-label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.svc-desc {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.svc-arrow {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+/* ===== DIASPORA TX LIST ===== */
+.dia-tx-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dia-tx-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+}
+
+.dia-tx-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.dia-tx-amount {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.dia-tx-status {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  color: var(--accent-emerald);
+  font-weight: 500;
+}
+
+/* ===== ESCROW CARD ===== */
+.escrow-card {
+  padding: 22px;
+  margin-bottom: 16px;
+}
+
+.escrow-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.escrow-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.escrow-title-row h4 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.escrow-status-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent-gold);
+  background: rgba(212, 175, 55, 0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.escrow-progress-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.escrow-progress-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--bg-input);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.escrow-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-emerald), var(--accent-gold));
+  border-radius: 10px;
+}
+
+.escrow-progress-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  min-width: 40px;
+  text-align: right;
+}
+
+/* Milestones */
+.milestones {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 0 4px;
+}
+
+.milestone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.ms-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--border-highlight);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+}
+
+.milestone.done .ms-dot {
+  background: var(--accent-emerald);
+  border-color: var(--accent-emerald);
+  color: #fff;
+}
+
+.milestone.current .ms-dot {
+  border-color: var(--accent-gold);
+  background: rgba(212, 175, 55, 0.15);
+  animation: pulseRing 2s infinite;
+}
+
+@keyframes pulseRing {
+  0%, 100% { box-shadow: 0 0 0 0 var(--accent-gold-glow); }
+  50% { box-shadow: 0 0 0 6px transparent; }
+}
+
+.ms-name {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.milestone.done .ms-name {
+  color: var(--accent-emerald);
+}
+
+.milestone.current .ms-name {
+  color: var(--accent-gold);
+}
+
+/* Escrow Finances */
+.escrow-finances {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.escrow-fin-item {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fin-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.fin-value {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.fin-value.emerald {
+  color: var(--accent-emerald);
+}
+
+/* Escrow Actions */
+.escrow-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.escrow-action-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+}
+
+.escrow-action-btn.primary {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.08));
+  border-color: rgba(16, 185, 129, 0.3);
+  color: var(--accent-emerald);
+}
+
+/* ===== POA CARDS ===== */
+.poa-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.poa-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a2e1a 0%, #0d3e16 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+  color: var(--accent-emerald);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.poa-info {
+  flex: 1;
+}
+
+.poa-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.poa-relation {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.poa-meta {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.poa-active-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent-emerald);
+  background: rgba(16, 185, 129, 0.1);
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.poa-expires {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+/* Evidence grid */
+.evidence-grid { display: flex; flex-direction: column; gap: 10px; }
+.evidence-item { display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 14px; }
+.evidence-item h4 { font-size: 14px; font-weight: 600; }
+.evidence-item p { font-size: 12px; color: var(--text-muted); margin-top: 2px; }

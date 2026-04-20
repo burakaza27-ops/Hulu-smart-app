@@ -1,0 +1,66 @@
+.topup-page { padding-bottom: 100px; }
+.topup-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 4px; }
+
+.operator-list { display: flex; flex-direction: column; gap: 10px; }
+.operator-card { display: flex; align-items: center; gap: 14px; padding: 16px; border-radius: 16px; cursor: pointer; }
+.op-logo { font-size: 28px; }
+.op-info h4 { font-size: 15px; font-weight: 600; }
+.op-info p { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+.selected-op { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 14px; margin-bottom: 16px; }
+
+.phone-section { margin-bottom: 20px; }
+.phone-toggle { display: flex; gap: 4px; margin-bottom: 10px; background: var(--bg-secondary); border-radius: 10px; padding: 3px; }
+.pt-btn { flex: 1; padding: 8px; border-radius: 8px; font-size: 13px; font-weight: 500; color: var(--text-muted); transition: all 0.2s; }
+.pt-btn.active { color: var(--accent-gold); background: rgba(212,175,55,0.1); }
+
+.phone-input-row { display: flex; align-items: center; gap: 10px; padding: 14px; border-radius: 14px; }
+.phone-input { flex: 1; background: none; border: none; color: var(--text-primary); font-size: 16px; font-weight: 500; letter-spacing: 1px; outline: none; }
+
+.package-tabs { display: flex; gap: 4px; background: var(--bg-secondary); border-radius: 14px; padding: 4px; margin-bottom: 16px; }
+.pkg-tab { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 10px; border-radius: 12px; font-size: 13px; font-weight: 500; color: var(--text-muted); position: relative;  overflow: hidden; }
+.pkg-tab.active { color: var(--text-primary); }
+.pkg-tab .tab-indicator { position: absolute; inset: 0; background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.2); border-radius: 12px; z-index: -1; }
+
+.airtime-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.airtime-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px 10px; border-radius: 16px; transition: all 0.2s; }
+.airtime-btn.selected { border-color: var(--accent-gold) !important; background: rgba(212,175,55,0.08) !important; }
+.airtime-amount { font-size: 22px; font-weight: 700; line-height: 1; }
+.airtime-currency { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+.airtime-btn.selected .airtime-amount { color: var(--accent-gold); }
+
+.data-list { display: flex; flex-direction: column; gap: 8px; }
+.data-card { display: flex; align-items: center; gap: 14px; padding: 16px; border-radius: 14px; cursor: pointer; transition: all 0.2s; }
+.data-card.selected { border-color: var(--accent-gold) !important; background: rgba(212,175,55,0.08) !important; }
+.data-info h4 { font-size: 15px; font-weight: 600; }
+.data-info p { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+.data-price { margin-left: auto; font-size: 14px; font-weight: 600; color: var(--accent-gold); }
+
+/* Phone validation error */
+.phone-input-row.error {
+  border-color: #EF4444 !important;
+  box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.2);
+}
+
+/* Receipt (reuses SendMoney receipt styles) */
+.receipt-summary {
+  width: 100%;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.receipt-val {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 13px;
+}
+

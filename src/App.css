@@ -1,0 +1,13 @@
+/* App-level styles & overrides */
+.app-container {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--bg-primary);
+  position: relative;
+  /* Subtle side borders for desktop viewing */
+  box-shadow: 
+    -1px 0 0 0 var(--border-subtle),
+    1px 0 0 0 var(--border-subtle);
+}
