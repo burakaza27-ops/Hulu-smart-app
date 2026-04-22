@@ -158,7 +158,7 @@ export default function Profile() {
         {showPersonalInfo && (
           <>
             <motion.div className="sheet-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowPersonalInfo(false)} />
-            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%', x: '-50%' }} animate={{ y: 0, x: '-50%' }} exit={{ y: '100%', x: '-50%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
               <div className="sheet-handle" />
               <button className="sheet-close" onClick={() => setShowPersonalInfo(false)}><X size={20} /></button>
               <h3 style={{ marginBottom: 20 }}>{t('profile.personalInfo')}</h3>
@@ -190,7 +190,7 @@ export default function Profile() {
         {showLinkedAccounts && (
           <>
             <motion.div className="sheet-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowLinkedAccounts(false)} />
-            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%', x: '-50%' }} animate={{ y: 0, x: '-50%' }} exit={{ y: '100%', x: '-50%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
               <div className="sheet-handle" />
               <button className="sheet-close" onClick={() => setShowLinkedAccounts(false)}><X size={20} /></button>
               <h3 style={{ marginBottom: 20 }}>{t('profile.linkedAccounts')}</h3>
@@ -219,7 +219,7 @@ export default function Profile() {
         {showPIN && (
           <>
             <motion.div className="sheet-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowPIN(false)} />
-            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%', x: '-50%' }} animate={{ y: 0, x: '-50%' }} exit={{ y: '100%', x: '-50%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
               <div className="sheet-handle" />
               <button className="sheet-close" onClick={() => setShowPIN(false)}><X size={20} /></button>
               <h3 style={{ marginBottom: 20 }}>{t('profile.pinPassword')}</h3>
@@ -327,7 +327,7 @@ export default function Profile() {
         {showHelp && (
           <>
             <motion.div className="sheet-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowHelp(false)} />
-            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%', x: '-50%' }} animate={{ y: 0, x: '-50%' }} exit={{ y: '100%', x: '-50%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
               <div className="sheet-handle" />
               <button className="sheet-close" onClick={() => setShowHelp(false)}><X size={20} /></button>
               <h3 style={{ marginBottom: 20 }}>{t('profile.helpCenter')}</h3>
@@ -382,7 +382,7 @@ export default function Profile() {
         {showTerms && (
           <>
             <motion.div className="sheet-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowTerms(false)} />
-            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%', x: '-50%' }} animate={{ y: 0, x: '-50%' }} exit={{ y: '100%', x: '-50%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
               <div className="sheet-handle" />
               <button className="sheet-close" onClick={() => setShowTerms(false)}><X size={20} /></button>
               <h3 style={{ marginBottom: 16 }}>{t('profile.terms')}</h3>

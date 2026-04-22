@@ -188,7 +188,7 @@ export default function Vault() {
         {showSheet && selectedDoc && (
           <>
             <motion.div className="sheet-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowSheet(false)} />
-            <motion.div className="action-sheet glass-panel" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+            <motion.div className="action-sheet glass-panel" initial={{ y: '100%', x: '-50%' }} animate={{ y: 0, x: '-50%' }} exit={{ y: '100%', x: '-50%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
               <div className="sheet-handle" />
               <button className="sheet-close" onClick={() => setShowSheet(false)}><X size={20}/></button>
               <div className="sheet-doc-header">
@@ -230,7 +230,7 @@ export default function Vault() {
         {showUpload && (
           <>
             <motion.div className="sheet-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowUpload(false)} />
-            <motion.div className="action-sheet glass-panel" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+            <motion.div className="action-sheet glass-panel" initial={{ y: '100%', x: '-50%' }} animate={{ y: 0, x: '-50%' }} exit={{ y: '100%', x: '-50%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
               <div className="sheet-handle" />
               <button className="sheet-close" onClick={() => setShowUpload(false)}><X size={20}/></button>
               {scanState === 'verifying' && (
@@ -290,7 +290,7 @@ export default function Vault() {
         {showInstShare && (
           <>
             <motion.div className="sheet-overlay" style={{ zIndex: 202 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowInstShare(false)} />
-            <motion.div className="action-sheet glass-panel" style={{ zIndex: 203 }} initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+            <motion.div className="action-sheet glass-panel" style={{ zIndex: 203 }} initial={{ y: '100%', x: '-50%' }} animate={{ y: 0, x: '-50%' }} exit={{ y: '100%', x: '-50%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
               <div className="sheet-handle" />
               <button className="sheet-close" onClick={() => setShowInstShare(false)}><X size={20}/></button>
               <h3 style={{ marginBottom: 16 }}>Secure Routing</h3>

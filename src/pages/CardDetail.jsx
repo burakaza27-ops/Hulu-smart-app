@@ -27,6 +27,7 @@ export default function CardDetail() {
   const balance = useStore(s => s.balance);
   const [isCopied, setIsCopied] = useState(false);
   const [isFrozen, setIsFrozen] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
   const [showLimits, setShowLimits] = useState(false);
   const [showPIN, setShowPIN] = useState(false);
   const [dailyLimit, setDailyLimit] = useState(50000);
@@ -68,42 +69,63 @@ export default function CardDetail() {
         <div style={{ width: 40 }} />
       </div>
 
-      <motion.div variants={item} className={`hulu-card large-card ${isFrozen ? 'frozen' : ''}`}>
-        <div className="card-shine" />
-        {isFrozen && (
-          <motion.div className="freeze-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            <Snowflake size={40} />
-            <span>Card Frozen</span>
-          </motion.div>
-        )}
-        <div className="card-content">
-          <div className="card-header-row">
-            <div className="card-logo">
-              <CreditCard size={20} />
-              <span className="card-brand">HULU</span>
-              <span className="card-brand-sub">{t('card.onecard')}</span>
+      <motion.div variants={item} className={`card-flip-container ${isFlipped ? 'flipped' : ''}`} onClick={() => setIsFlipped(!isFlipped)}>
+        <motion.div className={`hulu-card large-card card-front ${isFrozen ? 'frozen' : ''}`}>
+          <div className="card-shine" />
+          {isFrozen && (
+            <motion.div className="freeze-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+              <Snowflake size={40} />
+              <span>Card Frozen</span>
+            </motion.div>
+          )}
+          <div className="card-content">
+            <div className="card-header-row">
+              <div className="card-logo">
+                <CreditCard size={20} />
+                <span className="card-brand">HULU</span>
+                <span className="card-brand-sub">{t('card.onecard')}</span>
+              </div>
+              <div className="contactless-wave" style={{ position: 'relative', right: 0 }} />
             </div>
-            <div className="contactless-wave" style={{ position: 'relative', right: 0 }} />
+            <div className="card-number-large" onClick={(e) => { e.stopPropagation(); handleCopy(); }}>
+              <span>4582</span><span>1234</span><span>5678</span><span>7842</span>
+              <button className={`copy-btn ${isCopied ? 'copied' : ''}`}><Copy size={14} /></button>
+            </div>
+            <div className="card-footer-row large">
+              <div className="card-info-group">
+                <span className="card-label">Cardholder Name</span>
+                <span className="card-value">Kebede Alemu</span>
+              </div>
+              <div className="card-info-group">
+                <span className="card-label">Expiry</span>
+                <span className="card-value">12/28</span>
+              </div>
+              <div className="card-info-group">
+                <span className="card-label">CVV</span>
+                <span className="card-value">***</span>
+              </div>
+            </div>
           </div>
-          <div className="card-number-large" onClick={handleCopy}>
-            <span>4582</span><span>1234</span><span>5678</span><span>7842</span>
-            <button className={`copy-btn ${isCopied ? 'copied' : ''}`}><Copy size={14} /></button>
+        </motion.div>
+
+        {/* Back of the card */}
+        <motion.div className={`hulu-card large-card card-back ${isFrozen ? 'frozen' : ''}`}>
+          <div className="card-magnetic-stripe"></div>
+          <div className="card-back-content">
+            <div className="cvv-strip">
+              <span>CVV</span>
+              <div className="cvv-box">842</div>
+            </div>
+            <div className="qr-container">
+              <div className="qr-code-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM9 3v6M15 9v-6M9 21v-6M15 21v-6M21 9v6h-6M3 9h6M9 15h6M21 15h-6M15 15h6"/>
+                </svg>
+              </div>
+              <span className="qr-text">Scan to Pay</span>
+            </div>
           </div>
-          <div className="card-footer-row large">
-            <div className="card-info-group">
-              <span className="card-label">Cardholder Name</span>
-              <span className="card-value">Kebede Alemu</span>
-            </div>
-            <div className="card-info-group">
-              <span className="card-label">Expiry</span>
-              <span className="card-value">12/28</span>
-            </div>
-            <div className="card-info-group">
-              <span className="card-label">CVV</span>
-              <span className="card-value">***</span>
-            </div>
-          </div>
-        </div>
+        </motion.div>
       </motion.div>
 
       <motion.div variants={item} className="card-stats-row glass-panel">
@@ -143,7 +165,7 @@ export default function CardDetail() {
         {showLimits && (
           <>
             <motion.div className="sheet-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowLimits(false)} />
-            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%', x: '-50%' }} animate={{ y: 0, x: '-50%' }} exit={{ y: '100%', x: '-50%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
               <div className="sheet-handle" />
               <button className="sheet-close" onClick={() => setShowLimits(false)}><X size={20} /></button>
               <h3>Spending Limits</h3>
@@ -176,7 +198,7 @@ export default function CardDetail() {
         {showPIN && (
           <>
             <motion.div className="sheet-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowPIN(false)} />
-            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%', x: '-50%' }} animate={{ y: 0, x: '-50%' }} exit={{ y: '100%', x: '-50%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
               <div className="sheet-handle" />
               <button className="sheet-close" onClick={() => { setShowPIN(false); setCardPinView(null); }}><X size={20} /></button>
               <h3>PIN & Security</h3>

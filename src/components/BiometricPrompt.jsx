@@ -71,9 +71,9 @@ export default function BiometricPrompt({ open, onVerified, onCancel, mode = 'fi
           />
           <motion.div
             className="bio-sheet glass-panel"
-            initial={{ y: '100%' }}
-            animate={{ y: 0 }}
-            exit={{ y: '100%' }}
+            initial={{ y: '100%', x: '-50%' }}
+            animate={{ y: 0, x: '-50%' }}
+            exit={{ y: '100%', x: '-50%' }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           >
             <div className="sheet-handle" />
