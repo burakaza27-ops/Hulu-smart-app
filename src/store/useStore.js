@@ -51,7 +51,9 @@ const useStore = create((set, get) => ({
   // ===== Language (i18n) =====
   language: persisted.language ?? 'en',
   toggleLanguage: () => set((state) => {
-    const lang = state.language === 'en' ? 'am' : 'en';
+    const langs = ['en', 'am', 'om', 'ti'];
+    const nextIdx = (langs.indexOf(state.language) + 1) % langs.length;
+    const lang = langs[nextIdx];
     _persistEncrypted({ language: lang });
     return { language: lang };
   }),

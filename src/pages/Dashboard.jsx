@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import {
   Send, Receipt, QrCode, ArrowUpRight, ArrowDownLeft,
-  CreditCard, Zap, Droplets, Wifi, Plus, Eye, EyeOff, TrendingUp
+  CreditCard, Zap, Droplets, Wifi, Plus, Eye, EyeOff, TrendingUp,
+  Star, ChevronRight
 } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -109,6 +110,74 @@ export default function Dashboard() {
           <div className="contactless-wave" />
           <div className="contactless-wave" />
           <div className="contactless-wave" />
+        </div>
+      </motion.div>
+
+      {/* Bank Connect - Abyssinia Bank */}
+      <motion.div variants={item} className="section" style={{ marginTop: 16 }}>
+        <motion.button
+          className="glass-panel"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          style={{
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 12,
+            padding: 16,
+            borderRadius: 16,
+            background: 'linear-gradient(135deg, rgba(234, 179, 8, 0.15) 0%, rgba(234, 179, 8, 0.05) 100%)',
+            border: '1px solid rgba(234, 179, 8, 0.3)',
+            color: '#eab308',
+            fontSize: 15,
+            fontWeight: 700,
+            cursor: 'pointer',
+            marginBottom: 16
+          }}
+          onClick={() => alert("Abyssinia Bank Account Linked Successfully!")}
+        >
+          <div style={{ width: 20, height: 20, borderRadius: 4, background: '#eab308', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="2.5" style={{ padding: '2px' }}>
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          Link your Abyssinia Account
+        </motion.button>
+
+        {/* Targeted Bank Offers */}
+        <div className="section-header" style={{ marginBottom: 12 }}>
+          <span className="caption">Exclusive Offers for You</span>
+        </div>
+        <div style={{ display: 'flex', gap: 12, overflowX: 'auto', paddingBottom: 8, scrollbarWidth: 'none' }}>
+          <motion.div 
+            className="glass-panel"
+            style={{ minWidth: 260, padding: 16, borderRadius: 16, background: 'linear-gradient(135deg, rgba(30,58,138,0.4) 0%, rgba(30,58,138,0.1) 100%)', border: '1px solid rgba(30,58,138,0.5)' }}
+            whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 }}>
+              <div style={{ padding: '6px 10px', background: 'rgba(234,179,8,0.2)', color: '#eab308', borderRadius: 20, fontSize: 11, fontWeight: 700, display: 'flex', gap: 4, alignItems: 'center' }}>
+                <Star size={12} /> Personal Loan
+              </div>
+              <div style={{ color: 'var(--text-muted)' }}><ChevronRight size={18} /></div>
+            </div>
+            <h4 style={{ fontSize: 15, fontWeight: 700, marginBottom: 4 }}>Pre-approved: 500,000 ETB</h4>
+            <p style={{ fontSize: 12, color: 'var(--text-muted)' }}>Get an Abyssinia instant digital loan at special 11% interest. Apply in seconds.</p>
+          </motion.div>
+          <motion.div 
+            className="glass-panel"
+            style={{ minWidth: 260, padding: 16, borderRadius: 16, background: 'linear-gradient(135deg, rgba(16,185,129,0.15) 0%, rgba(16,185,129,0.05) 100%)', border: '1px solid rgba(16,185,129,0.3)' }}
+            whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 }}>
+              <div style={{ padding: '6px 10px', background: 'rgba(16,185,129,0.2)', color: 'var(--accent-emerald)', borderRadius: 20, fontSize: 11, fontWeight: 700, display: 'flex', gap: 4, alignItems: 'center' }}>
+                <TrendingUp size={12} /> High Yield Savings
+              </div>
+              <div style={{ color: 'var(--text-muted)' }}><ChevronRight size={18} /></div>
+            </div>
+            <h4 style={{ fontSize: 15, fontWeight: 700, marginBottom: 4 }}>Earn up to 8% APY</h4>
+            <p style={{ fontSize: 12, color: 'var(--text-muted)' }}>Open a Fixed Time Deposit with Abyssinia and grow your wealth faster.</p>
+          </motion.div>
         </div>
       </motion.div>
 

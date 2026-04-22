@@ -412,7 +412,7 @@ export default function Profile() {
         {showSignOut && (
           <>
             <motion.div className="sheet-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowSignOut(false)} />
-            <motion.div className="signout-modal glass-panel" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }}>
+            <motion.div className="signout-modal glass-panel" initial={{ opacity: 0, scale: 0.9, y: '-50%' }} animate={{ opacity: 1, scale: 1, y: '-50%' }} exit={{ opacity: 0, scale: 0.9, y: '-50%' }}>
               <LogOut size={32} color="#EF4444" />
               <h3>Sign Out?</h3>
               <p>Are you sure you want to sign out of your HULU account?</p>

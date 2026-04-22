@@ -43,6 +43,7 @@ export default function Vault() {
   const [showInstShare, setShowInstShare] = useState(false);
   const [documents, setDocuments] = useState(initialDocs);
   const [showFilterBar, setShowFilterBar] = useState(false);
+  const [scanState, setScanState] = useState(null); // 'verifying', 'success', null
 
   const filteredDocs = useMemo(() => {
     return documents.filter(d => {
@@ -56,6 +57,19 @@ export default function Vault() {
   const handleVerified = () => { setShowBio(false); setUnlocked(true); };
 
   const handleUpload = (name) => {
+    if (name === "Scanned Document") {
+      setScanState('verifying');
+      setTimeout(() => setScanState('success'), 2000);
+      setTimeout(() => {
+        completeUpload(name);
+        setScanState(null);
+      }, 4000);
+    } else {
+      completeUpload(name);
+    }
+  };
+
+  const completeUpload = (name) => {
     const newDoc = {
       id: Date.now(),
       title: name,
@@ -63,12 +77,12 @@ export default function Vault() {
       icon: FileText,
       type: 'Legal',
       date: new Date().toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }),
-      verified: false,
-      color: '#8B5CF6',
+      verified: true,
+      color: '#10B981',
     };
     setDocuments([newDoc, ...documents]);
     setShowUpload(false);
-    showToast('Document uploaded to Vault');
+    if (name !== "Scanned Document") showToast('Document uploaded to Vault');
   };
 
   const handleShare = () => { setShowSheet(false); showToast(`"${selectedDoc.title}" shared securely via encrypted link`); };
@@ -219,20 +233,53 @@ export default function Vault() {
             <motion.div className="action-sheet glass-panel" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
               <div className="sheet-handle" />
               <button className="sheet-close" onClick={() => setShowUpload(false)}><X size={20}/></button>
-              <h3 style={{ marginBottom: 16 }}>{t('vault.upload')}</h3>
-              <div className="upload-area glass-panel">
-                <Upload size={32} color="var(--accent-gold)" />
-                <p>Tap to select or drag a file</p>
-                <span className="upload-formats">PDF, JPG, PNG up to 10MB</span>
-              </div>
-              <div className="upload-quick-options">
-                {['National ID', 'Driving License', 'Birth Certificate', 'Insurance Policy'].map((name, i) => (
-                  <motion.button key={i} className="upload-quick-btn glass-panel" whileTap={{ scale: 0.95 }} onClick={() => handleUpload(name)}>
-                    <FileText size={16} />
-                    <span>{name}</span>
-                  </motion.button>
-                ))}
-              </div>
+              {scanState === 'verifying' && (
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ padding: '40px 0', textAlign: 'center' }}>
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}
+                    style={{ width: 48, height: 48, border: '3px solid var(--accent-gold)', borderTopColor: 'transparent', borderRadius: '50%', margin: '0 auto 16px' }}
+                  />
+                  <h4 style={{ fontSize: 18, color: 'var(--text-primary)' }}>Verifying...</h4>
+                  <p style={{ color: 'var(--text-muted)', fontSize: 13, marginTop: 8 }}>Extracting secure data from document via camera.</p>
+                </motion.div>
+              )}
+
+              {scanState === 'success' && (
+                <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} style={{ padding: '40px 0', textAlign: 'center' }}>
+                  <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', damping: 15 }} style={{ width: 64, height: 64, background: 'rgba(16,185,129,0.15)', color: 'var(--accent-emerald)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px' }}>
+                    <CheckCircle2 size={32} />
+                  </motion.div>
+                  <h4 style={{ fontSize: 18, color: 'var(--accent-emerald)', fontWeight: 700 }}>Securely Stored</h4>
+                  <p style={{ color: 'var(--text-muted)', fontSize: 13, marginTop: 8 }}>Document encrypted and saved to Vault.</p>
+                </motion.div>
+              )}
+
+              {!scanState && (
+                <>
+                  <h3 style={{ marginBottom: 16 }}>{t('vault.upload')}</h3>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '20px' }}>
+                    <motion.div className="upload-area glass-panel" style={{ margin: 0, padding: '24px 16px', textAlign: 'center' }} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} onClick={() => handleUpload("Scanned Document")}>
+                      <ScanFace size={32} color="var(--accent-emerald)" style={{ marginBottom: 8 }} />
+                      <p style={{ fontSize: 13, fontWeight: 600 }}>Scan Document</p>
+                      <span className="upload-formats" style={{ fontSize: 10 }}>Use Camera</span>
+                    </motion.div>
+                    <motion.div className="upload-area glass-panel" style={{ margin: 0, padding: '24px 16px', textAlign: 'center' }} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} onClick={() => handleUpload("Uploaded File")}>
+                      <Upload size={32} color="var(--accent-gold)" style={{ marginBottom: 8 }} />
+                      <p style={{ fontSize: 13, fontWeight: 600 }}>Upload File</p>
+                      <span className="upload-formats" style={{ fontSize: 10 }}>PDF, JPG, PNG</span>
+                    </motion.div>
+                  </div>
+                  <div className="upload-quick-options">
+                    {['National ID', 'Driving License', 'Birth Certificate', 'Insurance Policy'].map((name, i) => (
+                      <motion.button key={i} className="upload-quick-btn glass-panel" whileTap={{ scale: 0.95 }} onClick={() => handleUpload(name)}>
+                        <FileText size={16} />
+                        <span>{name}</span>
+                      </motion.button>
+                    ))}
+                  </div>
+                </>
+              )}
             </motion.div>
           </>
         )}

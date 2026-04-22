@@ -12,9 +12,11 @@ export default function LanguageToggle() {
       className="lang-toggle-btn"
       whileTap={{ scale: 0.85 }}
       onClick={toggleLanguage}
-      title={language === 'en' ? 'Switch to Amharic' : 'Switch to English'}
+      title="Switch Language"
     >
-      <span className="lang-code">{language === 'en' ? 'አማ' : 'EN'}</span>
+      <span className="lang-code">
+        {language === 'en' ? 'EN' : language === 'am' ? 'አማ' : language === 'om' ? 'OR' : 'ትግ'}
+      </span>
     </motion.button>
   );
 }

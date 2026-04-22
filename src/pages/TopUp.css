@@ -42,6 +42,97 @@
   box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.2);
 }
 
+/* ===== CUSTOM AMOUNT SECTION ===== */
+.custom-amount-section {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(212, 175, 55, 0.03);
+  border: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.custom-amount-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.custom-amount-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.custom-amount-min {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.custom-amount-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 14px;
+  transition: all 0.25s ease;
+}
+
+.custom-amount-input-row.active {
+  border-color: var(--accent-gold) !important;
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.15), 0 0 20px rgba(212, 175, 55, 0.05);
+}
+
+.custom-currency-tag {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  background: rgba(212, 175, 55, 0.1);
+  padding: 6px 12px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+}
+
+.custom-amount-input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 600;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.custom-amount-input::placeholder {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Remove number input spin buttons */
+.custom-amount-input::-webkit-outer-spin-button,
+.custom-amount-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.custom-amount-input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.custom-amount-error {
+  display: block;
+  font-size: 11px;
+  color: #EF4444;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
 /* Receipt (reuses SendMoney receipt styles) */
 .receipt-summary {
   width: 100%;
@@ -63,4 +154,3 @@
   color: var(--text-primary);
   font-size: 13px;
 }
-

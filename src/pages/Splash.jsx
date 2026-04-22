@@ -75,25 +75,34 @@ export default function Splash() {
               />
             </div>
 
-            {/* Logo Center */}
+            {/* Abyssinia Bank White-Labeling */}
             <motion.div
-              className="splash-logo-center"
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{ delay: 0.3, duration: 0.8, type: 'spring', stiffness: 200 }}
-            >
-              <Shield size={40} />
-            </motion.div>
-
-            {/* Brand Text */}
-            <motion.div
-              className="splash-brand"
-              initial={{ opacity: 0, y: 30 }}
+              className="splash-bank-branding"
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.0, duration: 0.6 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+              style={{
+                position: 'absolute',
+                bottom: 60,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: 8
+              }}
             >
-              <h1 className="splash-brand-name">{t('app.name')}</h1>
-              <p className="splash-brand-sub">{t('app.tagline')}</p>
+              <span style={{ fontSize: 11, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '2px' }}>
+                Powered by
+              </span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                <div style={{ width: 28, height: 28, borderRadius: '6px', background: '#eab308' }}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="2" style={{ padding: '4px' }}>
+                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                  </svg>
+                </div>
+                <span style={{ fontSize: 20, fontWeight: 800, color: '#eab308', letterSpacing: '1px' }}>
+                  Abyssinia Bank
+                </span>
+              </div>
             </motion.div>
 
             {/* Loading bar */}
