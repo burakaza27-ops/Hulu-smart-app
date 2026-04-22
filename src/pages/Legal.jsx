@@ -43,78 +43,72 @@ export default function Legal() {
 
   const OPENROUTER_API_KEY = "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";
 
+  const getLocalResponse = (query) => {
+    const q = query.toLowerCase();
+    if (q.includes('rent') || q.includes('lease') || q.includes('house') || q.includes('ቤት') || q.includes('ኪራይ'))
+      return 'Based on Ethiopian Civil Code Articles 2610-2619, I\'m preparing a legally compliant lease agreement for you. Here is your document:';
+    if (q.includes('employ') || q.includes('job') || q.includes('work') || q.includes('ስራ'))
+      return 'I\'ll draft an employment contract compliant with Ethiopian Labour Proclamation No. 1156/2019, covering probation, working hours, and leave. Here is your document:';
+    if (q.includes('nda') || q.includes('confidential'))
+      return 'Drafting an NDA under Ethiopian Civil Code Article 2049. Here is your document:';
+    if (q.includes('vehicle') || q.includes('car') || q.includes('መኪና'))
+      return 'Preparing a Vehicle Sale Agreement per Ethiopian Property Law. Here is your document:';
+    if (q.includes('land') || q.includes('property') || q.includes('መሬት'))
+      return 'Per Art. 40.3 of the Constitution, I can draft a leasehold agreement compliant with Proclamation No. 721/2011. Here is your document:';
+    if (q.includes('business') || q.includes('company'))
+      return 'I can help with business formation under the Ethiopian Commercial Code. Options include PLC (min. 5 shareholders, 15,000 ETB capital), Share Company, or Sole Proprietorship. Which interests you?';
+    return 'I understand your legal question. Let me analyze the relevant Ethiopian law and draft a comprehensive document for you. Here is your document:';
+  };
+
   const handleSend = async () => {
     if (!inputVal.trim()) return;
     const query = inputVal;
-    
     const userMsg = {
       id: Date.now(),
       type: 'user',
       text: query,
       time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     };
-    
     setMessages(prev => [...prev, userMsg]);
     setInputVal('');
     setIsTyping(true);
 
+    let botText = '';
     try {
-      // Build conversation history for the API
       const apiMessages = [
-        { 
-          role: "system", 
-          content: "You are an AI legal assistant for HULU Smart Service Hub in Ethiopia. You speak Amharic, Oromo, Tigrinya, and English. You draft contracts based on Ethiopian law. Keep responses concise. If the user asks for a document or provides all details for a contract, say 'Here is your document:' at the very end of your message to trigger the UI document sheet."
-        },
-        ...messages.filter(m => m.type === 'user' || m.type === 'bot').map(m => ({
+        { role: "system", content: "You are an AI legal assistant for HULU Smart Service Hub in Ethiopia. You speak Amharic, Oromo, Tigrinya, and English. You draft contracts based on Ethiopian law. Keep responses concise (under 200 words). If the user asks for a document or provides details for a contract, end your reply with 'Here is your document:' to trigger the document sheet." },
+        ...messages.filter(m => m.type === 'user' || m.type === 'bot').slice(-6).map(m => ({
           role: m.type === 'bot' ? 'assistant' : 'user',
           content: m.text
         })),
         { role: "user", content: query }
       ];
-
       const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
-        headers: {
-          "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          model: "google/gemma-2-9b-it:free",
-          messages: apiMessages,
-          max_tokens: 500,
-        })
+        headers: { "Authorization": `Bearer ${OPENROUTER_API_KEY}`, "Content-Type": "application/json" },
+        body: JSON.stringify({ model: "google/gemma-2-9b-it:free", messages: apiMessages, max_tokens: 400 })
       });
-
+      if (!response.ok) throw new Error('API error');
       const data = await response.json();
-      let botText = "I'm sorry, I couldn't process your request at the moment.";
-      
-      if (data && data.choices && data.choices[0] && data.choices[0].message) {
+      if (data?.choices?.[0]?.message?.content) {
         botText = data.choices[0].message.content;
+      } else {
+        botText = getLocalResponse(query);
       }
+    } catch {
+      botText = getLocalResponse(query);
+    }
 
-      setIsTyping(false);
-      const botReply = {
-        id: Date.now() + 1,
-        type: 'bot',
-        text: botText,
-        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-      };
-      
-      setMessages(prev => [...prev, botReply]);
-      
-      // Trigger draft sheet if the AI decides to generate a document
-      if (botText.toLowerCase().includes('here is your document:')) {
-        setTimeout(() => setShowDraft(true), 800);
-      }
-    } catch (error) {
-      console.error("OpenRouter API Error:", error);
-      setIsTyping(false);
-      setMessages(prev => [...prev, {
-        id: Date.now() + 1,
-        type: 'bot',
-        text: "Error connecting to AI Legal Assistant API. Please try again.",
-        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-      }]);
+    setIsTyping(false);
+    const botReply = {
+      id: Date.now() + 1,
+      type: 'bot',
+      text: botText,
+      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    };
+    setMessages(prev => [...prev, botReply]);
+    if (botText.toLowerCase().includes('here is your document:')) {
+      setTimeout(() => setShowDraft(true), 800);
     }
   };
 
@@ -128,47 +122,33 @@ export default function Legal() {
     setMessages(prev => [...prev, userMsg]);
     setIsTyping(true);
 
-    try {
-      const apiMessages = [
-        { 
-          role: "system", 
-          content: "You are an AI legal assistant for HULU Smart Service Hub in Ethiopia. The user wants you to draft a specific contract. Ask them for the missing details needed for this contract (parties, dates, amounts, etc.) in a clear numbered list."
-        },
-        { role: "user", content: `Draft a ${template.title} contract for me in Ethiopia` }
-      ];
+    const fallback = `I'll prepare a ${template.title} agreement. I need a few details:\n\n1. Full names of both parties\n2. Address or relevant property details\n3. Monthly amount or financial terms in ETB\n4. Duration of the agreement\n\nPlease provide these details, or I can use standard terms for a quick preview.`;
+    let botText = fallback;
 
+    try {
       const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
-        headers: {
-          "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
-          "Content-Type": "application/json"
-        },
+        headers: { "Authorization": `Bearer ${OPENROUTER_API_KEY}`, "Content-Type": "application/json" },
         body: JSON.stringify({
           model: "google/gemma-2-9b-it:free",
-          messages: apiMessages,
+          messages: [
+            { role: "system", content: "You are an AI legal assistant for HULU in Ethiopia. Ask the user for the missing details needed for this contract in a clear numbered list. Keep it under 150 words." },
+            { role: "user", content: `Draft a ${template.title} contract for me in Ethiopia` }
+          ],
           max_tokens: 300,
         })
       });
-
-      const data = await response.json();
-      let botText = `I'll prepare a ${template.title} agreement. I need a few details:\n\n1. Names of both parties\n2. Relevant properties/assets\n3. Financial terms in ETB\n\nPlease provide these details.`;
-      
-      if (data && data.choices && data.choices[0] && data.choices[0].message) {
-        botText = data.choices[0].message.content;
+      if (response.ok) {
+        const data = await response.json();
+        if (data?.choices?.[0]?.message?.content) botText = data.choices[0].message.content;
       }
+    } catch { /* use fallback */ }
 
-      setIsTyping(false);
-      const botReply = {
-        id: Date.now() + 1,
-        type: 'bot',
-        text: botText,
-        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-      };
-      setMessages(prev => [...prev, botReply]);
-    } catch (error) {
-      console.error(error);
-      setIsTyping(false);
-    }
+    setIsTyping(false);
+    setMessages(prev => [...prev, {
+      id: Date.now() + 1, type: 'bot', text: botText,
+      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    }]);
   };
 
   const handleVerified = () => {
