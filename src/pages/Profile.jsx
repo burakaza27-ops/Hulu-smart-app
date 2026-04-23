@@ -3,7 +3,7 @@ import {
   User, Shield, Settings, Bell, Globe, HelpCircle,
   FileText, LogOut, ChevronRight, Fingerprint, MapPin,
   X, Phone, Mail, Calendar, CreditCard, Lock, Eye, EyeOff,
-  MessageCircle, ExternalLink
+  MessageCircle, ExternalLink, Moon, Sun
 } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -27,6 +27,8 @@ export default function Profile() {
   const t = useTranslation();
   const language = useStore(s => s.language);
   const toggleLanguage = useStore(s => s.toggleLanguage);
+  const theme = useStore(s => s.theme);
+  const toggleTheme = useStore(s => s.toggleTheme);
   const setSplashSeen = useStore(s => s.setSplashSeen);
 
   const [bioEnabled, setBioEnabled] = useState(true);
@@ -119,6 +121,15 @@ export default function Profile() {
               <div className="pl-icon"><Globe size={18} /></div>
               <span>{t('profile.language')}</span>
               <span className="pl-value">{language === 'en' ? 'English' : 'አማርኛ'}</span>
+            </div>
+            <div className="pl-item" onClick={toggleTheme}>
+              <div className="pl-icon">
+                {theme === 'dark' ? <Moon size={18} /> : <Sun size={18} />}
+              </div>
+              <span>{t('profile.theme')}</span>
+              <span className="pl-value">
+                {theme === 'dark' ? t('profile.themeDark') : t('profile.themeLight')}
+              </span>
             </div>
             <div className="pl-item" onClick={() => navigate('/notifications')}>
               <div className="pl-icon"><Bell size={18} /></div>

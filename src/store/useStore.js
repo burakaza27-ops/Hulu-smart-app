@@ -59,6 +59,14 @@ const useStore = create((set, get) => ({
   }),
   setLanguage: (lang) => { _persistEncrypted({ language: lang }); set({ language: lang }); },
 
+  // ===== Theme =====
+  theme: persisted.theme ?? 'dark',
+  toggleTheme: () => set((state) => {
+    const nextTheme = state.theme === 'dark' ? 'light' : 'dark';
+    _persistEncrypted({ theme: nextTheme });
+    return { theme: nextTheme };
+  }),
+
   // ===== Notifications =====
   notifications: [
     { id: 1, type: 'transaction', title: 'Payment Received', titleAm: 'ክፍያ ደርሷል', desc: 'Salary deposit of 32,500 ETB from ABC Corp', descAm: 'ከABC Corp 32,500 ብር ደመወዝ ተቀማጭ', time: '2 min ago', read: false },
@@ -105,6 +113,7 @@ async function _persistEncrypted(partial) {
         balance: data.balance ?? useStore.getState().balance,
         transactions: data.transactions ?? useStore.getState().transactions,
         language: data.language ?? useStore.getState().language,
+        theme: data.theme ?? useStore.getState().theme,
         splashSeen: data.splashSeen ?? useStore.getState().splashSeen,
         _hydrated: true,
       });

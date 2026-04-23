@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect } from 'react';
 import useStore from './store/useStore';
 import BottomNav from './components/BottomNav';
 import Dashboard from './pages/Dashboard';
@@ -68,6 +69,16 @@ function AnimatedRoutes() {
 }
 
 export default function App() {
+  const theme = useStore((s) => s.theme);
+
+  useEffect(() => {
+    if (theme === 'light') {
+      document.body.classList.add('light-theme');
+    } else {
+      document.body.classList.remove('light-theme');
+    }
+  }, [theme]);
+
   return (
     <ErrorBoundary>
       <BrowserRouter>
