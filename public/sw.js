@@ -1,4 +1,4 @@
-const CACHE_NAME = 'hulu-v1.2';
+const CACHE_NAME = 'hulu-v1.4';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -52,6 +52,20 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Network-first for HTML pages to avoid serving stale index.html
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request).then((response) => {
+        const clone = response.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+        return response;
+      }).catch(() => {
+        return caches.match('/index.html');
+      })
+    );
+    return;
+  }
+
   // Cache-first for static assets
   if (url.origin === self.location.origin) {
     event.respondWith(
@@ -64,10 +78,7 @@ self.addEventListener('fetch', (event) => {
           }
           return response;
         }).catch(() => {
-          // Offline fallback for navigation
-          if (event.request.mode === 'navigate') {
-            return caches.match('/index.html');
-          }
+          // Ignore
         });
       })
     );
