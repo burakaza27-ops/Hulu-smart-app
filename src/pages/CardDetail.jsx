@@ -165,7 +165,7 @@ export default function CardDetail() {
         {showLimits && (
           <>
             <motion.div className="sheet-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowLimits(false)} />
-            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%', x: '-50%' }} animate={{ y: 0, x: '-50%' }} exit={{ y: '100%', x: '-50%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
               <div className="sheet-handle" />
               <button className="sheet-close" onClick={() => setShowLimits(false)}><X size={20} /></button>
               <h3>Spending Limits</h3>
@@ -198,7 +198,7 @@ export default function CardDetail() {
         {showPIN && (
           <>
             <motion.div className="sheet-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowPIN(false)} />
-            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%', x: '-50%' }} animate={{ y: 0, x: '-50%' }} exit={{ y: '100%', x: '-50%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
               <div className="sheet-handle" />
               <button className="sheet-close" onClick={() => { setShowPIN(false); setCardPinView(null); }}><X size={20} /></button>
               <h3>PIN & Security</h3>

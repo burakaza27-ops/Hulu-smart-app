@@ -18,6 +18,9 @@ const translations = {
   'dash.greeting.evening': { en: "Good Evening", am: "እንደምን አመሹ", om: "Galgala gaarii", ti: "ከመይ ኣምሲኻ" },
   'dash.welcome': { en: "Welcome back, Kebede", am: "እንኳን ተመለሱ፣ ከበደ", om: "Baga nagaan dhufte, Kabaadaa", ti: "እንቋዕ ደሓን መጻእካ፡ ከበደ" },
   'dash.totalBalance': { en: "Total Balance", am: "ጠቅላላ ቀሪ ሂሳብ", om: "Balansi Waliigalaa", ti: "ጠቕላላ ተረፍ" },
+  'dash.inheritance': { en: "Digital Inheritance", am: "ዲጂታል ውርስ", om: "Dhaalaa Diijiitaalaa", ti: "ዲጂታል ውርሻ" },
+  'dash.inheritanceDesc': { en: "Secure asset transfer", am: "አስተማማኝ የንብረት ዝውውር", om: "Dabarsa qabeenyaa eegamaa", ti: "ውሑስ ምስግጋር ንብረት" },
+  'dash.monthlySpending': { en: "Monthly Spending", am: "ወርሃዊ ወጪ", om: "Baasii Ji'aa", ti: "ወርሓዊ ወጻኢ" },
   'dash.quickActions': { en: "Quick Actions", am: "ፈጣን ተግባራት", om: "Tarkaanfii Ariifataa", ti: "ቅልጡፍ ተግባራት" },
   'dash.send': { en: "Send", am: "ላክ", om: "Ergi", ti: "ስደድ" },
   'dash.bills': { en: "Bills", am: "ክፍያ", om: "Bilbila", ti: "ክፍሊት" },
@@ -131,6 +134,14 @@ const translations = {
   'diaspora.virtualPoa': { en: "Virtual Power of Attorney", am: "ዲጂታል ውክልና", om: "Bakka Bu'ummaa Dijitaalaa", ti: "ዲጂታል ውክልና" },
   'diaspora.poaDesc': { en: "Grant legal power to family members securely via biometric-sealed digital authorization.", am: "ለቤተሰብ አባላት ህጋዊ ስልጣን በባዮሜትሪክ የታሸገ ዲጂታል ፈቃድ ይስጡ።", om: "Maatiif bakka bu'ummaa seeraa karaa dijitaalaatiin kenni.", ti: "ንስድራቤትካ ብዲጂታል መገዲ ሕጋዊ ውክልና ሃብ።" },
   'diaspora.createPoa': { en: "Create New POA", am: "አዲስ ውክልና ይፍጠሩ", om: "Bakka bu'ummaa haaraa uumi", ti: "ሓድሽ ውክልና ፍጠር" },
+  'diaspora.poaRepName': { en: "Representative Full Name", am: "የተወካይ ሙሉ ስም", om: "Maqaa Guutuu Bakka Bu'aa", ti: "ምሉእ ስም ወኪል" },
+  'diaspora.poaRelation': { en: "Relation (e.g. Sister, Brother)", am: "ዝምድና (ለምሳሌ፡ እህት፣ ወንድም)", om: "Firooma (Fkn. Obboleettii)", ti: "ዝምድና (ንኣብነት፡ ሓብቲ፡ ሓው)" },
+  'diaspora.poaScope': { en: "Scope (e.g. Property, Banking)", am: "ወሰን (ለምሳሌ፡ ንብረት፣ ባንክ)", om: "Daangaa (Fkn. Qabeenya)", ti: "ስፍሓት (ንኣብነት፡ ንብረት፡ ባንክ)" },
+  'diaspora.sealBiometrics': { en: "Seal with Biometrics", am: "በባዮሜትሪክ ያትሙ", om: "Baayoomeetrikii dhaan cuufi", ti: "ብባዮሜትሪክ ሕተም" },
+  'diaspora.recipientName': { en: "Recipient Name (optional)", am: "የተቀባይ ስም (አማራጭ)", om: "Maqaa Fudhataa (Filannoo)", ti: "ስም ተቐባሊ (ኣማራጺ)" },
+  'diaspora.enterAmount': { en: "Enter bill amount", am: "የክፍያ መጠን ያስገቡ", om: "Hanga kaffaltii galchi", ti: "መጠን ክፍሊት የእትዉ" },
+  'diaspora.confirmPay': { en: "Confirm & Pay", am: "ያረጋግጡ እና ይክፈሉ", om: "Mirkaneessii Kaffali", ti: "ኣረጋግጽን ክፈልን" },
+  'diaspora.currencyConverter': { en: "Currency Converter", am: "የገንዘብ ምንዛሪ", om: "Sharafa Maallaqaa", ti: "ናይ ገንዘብ ምንዛሪ" },
 
   // ===== Inheritance =====
   'inherit.title': { en: "Digital Inheritance", am: "ዲጂታል ውርስ", om: "Dhaalaa Diijiitaalaa", ti: "ዲጂታል ውርሻ" },
@@ -238,6 +249,8 @@ const translations = {
   'topup.rechargeAnother': { en: "Recharge Another", am: "ሌላ ሙላ", om: "Kan biraa guuti", ti: "ካልእ ምላእ" },
   'topup.myNumber': { en: "My Number", am: "የኔ ቁጥር", om: "Lakkoofsa koo", ti: "ናተይ ቑጽሪ" },
   'topup.otherNumber': { en: "Other Number", am: "ሌላ ቁጥር", om: "Lakkoofsa biraa", ti: "ካልእ ቑጽሪ" },
+  'topup.type': { en: "Type", am: "ዓይነት", om: "Gosa", ti: "ዓይነት" },
+  'topup.phone': { en: "Phone", am: "ስልክ", om: "Bilbila", ti: "ስልኪ" },
 
   // ===== ATM Withdraw =====
   'atm.title': { en: "Cardless ATM", am: "ያለ ካርድ ATM", om: "ATM Kaardii Malee", ti: "ብዘይ ካርድ ATM" },
@@ -252,6 +265,7 @@ const translations = {
   'atm.expiresIn': { en: "Expires in", am: "የሚያልቀው በ", om: "Kan dhumu", ti: "ዘብቅዕ ኣብ" },
   'atm.findAtm': { en: "Find Nearest ATM", am: "ቅርቡን ATM ያግኙ", om: "ATM dhiyoo barbaadi", ti: "ቀረባ ATM ድለ" },
   'atm.collected': { en: "Cash Collected!", am: "ጥሬ ገንዘብ ተወስዷል!", om: "Qarshiin Fudhatameera!", ti: "ገንዘብ ተወሲዱ!" },
+  'atm.cashCollected': { en: "Cash Collected!", am: "ጥሬ ገንዘብ ተወስዷል!", om: "Qarshiin Fudhatameera!", ti: "ገንዘብ ተወሲዱ!" },
   'atm.collectedDesc': { en: "collected successfully at", am: "በተሳካ ሁኔታ ተሰብስቧል በ", om: "sirnaan fudhatameera", ti: "ብዕዉት ተወሲዱ" },
   'atm.done': { en: "Done", am: "ተጠናቅቋል", om: "Xumurameera", ti: "ተወዲኡ" },
   'atm.showQr': { en: "Show QR Code", am: "QR ኮድ አሳይ", om: "QR Agarsiisi", ti: "QR ኮድ ኣርኢ" },

@@ -275,9 +275,9 @@ export default function Inheritance() {
             <motion.div className="sheet-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowWizard(false)} />
             <motion.div
               className="wizard-sheet glass-panel"
-              initial={{ y: '100%', x: '-50%' }}
-              animate={{ y: 0, x: '-50%' }}
-              exit={{ y: '100%', x: '-50%' }}
+              initial={{ y: '100%' }}
+              animate={{ y: 0 }}
+              exit={{ y: '100%' }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             >
               <div className="sheet-handle" />
@@ -365,7 +365,7 @@ export default function Inheritance() {
         {showAddBeneficiary && (
           <>
             <motion.div className="sheet-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowAddBeneficiary(false)} />
-            <motion.div className="wizard-sheet glass-panel" initial={{ y: '100%', x: '-50%' }} animate={{ y: 0, x: '-50%' }} exit={{ y: '100%', x: '-50%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+            <motion.div className="wizard-sheet glass-panel" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
               <div className="sheet-handle" />
               <button className="sheet-close" onClick={() => setShowAddBeneficiary(false)}><X size={20} /></button>
               <h3 style={{ marginBottom: 20 }}>{t('inherit.add')} Beneficiary</h3>

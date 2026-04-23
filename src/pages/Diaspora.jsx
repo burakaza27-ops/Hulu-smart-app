@@ -277,7 +277,7 @@ export default function Diaspora() {
         {showEvidence && (
           <>
             <motion.div className="sheet-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowEvidence(false)} />
-            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%', x: '-50%' }} animate={{ y: 0, x: '-50%' }} exit={{ y: '100%', x: '-50%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
               <div className="sheet-handle" />
               <button className="sheet-close" onClick={() => setShowEvidence(false)}><X size={20} /></button>
               <h3 style={{ marginBottom: 16 }}>Construction Evidence</h3>
@@ -299,17 +299,17 @@ export default function Diaspora() {
         {showCreatePOA && (
           <>
             <motion.div className="sheet-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowCreatePOA(false)} />
-            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%', x: '-50%' }} animate={{ y: 0, x: '-50%' }} exit={{ y: '100%', x: '-50%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
               <div className="sheet-handle" />
               <button className="sheet-close" onClick={() => setShowCreatePOA(false)}><X size={20} /></button>
               <h3 style={{ marginBottom: 20 }}>{t('diaspora.createPoa')}</h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                <input className="form-input" placeholder="Representative Full Name" value={newPoaName} onChange={e => setNewPoaName(e.target.value)} />
-                <input className="form-input" placeholder="Relation (e.g. Sister, Brother)" value={newPoaRelation} onChange={e => setNewPoaRelation(e.target.value)} />
-                <input className="form-input" placeholder="Scope (e.g. Property, Banking)" value={newPoaScope} onChange={e => setNewPoaScope(e.target.value)} />
+                <input className="form-input" placeholder={t('diaspora.poaRepName')} value={newPoaName} onChange={e => setNewPoaName(e.target.value)} />
+                <input className="form-input" placeholder={t('diaspora.poaRelation')} value={newPoaRelation} onChange={e => setNewPoaRelation(e.target.value)} />
+                <input className="form-input" placeholder={t('diaspora.poaScope')} value={newPoaScope} onChange={e => setNewPoaScope(e.target.value)} />
                 <motion.button className="btn-primary" whileTap={{ scale: 0.95 }} onClick={handleCreatePOA} disabled={!newPoaName || !newPoaRelation}
                   style={{ marginTop: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
-                  <Fingerprint size={18} /> Seal with Biometrics
+                  <Fingerprint size={18} /> {t('diaspora.sealBiometrics')}
                 </motion.button>
               </div>
             </motion.div>
@@ -322,7 +322,7 @@ export default function Diaspora() {
         {selectedService && (
           <>
             <motion.div className="sheet-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setSelectedService(null)} />
-            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%', x: '-50%' }} animate={{ y: 0, x: '-50%' }} exit={{ y: '100%', x: '-50%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+            <motion.div className="profile-sheet glass-panel" initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
               <div className="sheet-handle" />
               <button className="sheet-close" onClick={() => setSelectedService(null)}><X size={20} /></button>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
@@ -337,13 +337,13 @@ export default function Diaspora() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 <label style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500 }}>{selectedService.accountLabel}</label>
                 <input className="form-input" placeholder={selectedService.placeholder} value={svcAccount} onChange={e => setSvcAccount(e.target.value)} />
-                <label style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500 }}>Recipient Name (optional)</label>
+                <label style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500 }}>{t('diaspora.recipientName')}</label>
                 <input className="form-input" placeholder="e.g. Mom, Hana Kebede" value={svcRecipient} onChange={e => setSvcRecipient(e.target.value)} />
-                <label style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500 }}>Amount (ETB)</label>
-                <input className="form-input" type="number" placeholder="Enter bill amount" value={svcAmount} onChange={e => setSvcAmount(e.target.value)} style={{ fontSize: 18, fontWeight: 700 }} />
+                <label style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500 }}>{t('bills.amount')}</label>
+                <input className="form-input" type="number" placeholder={t('diaspora.enterAmount')} value={svcAmount} onChange={e => setSvcAmount(e.target.value)} style={{ fontSize: 18, fontWeight: 700 }} />
                 <motion.button className="btn-primary" whileTap={{ scale: 0.95 }} onClick={handleServiceConfirm}
                   style={{ marginTop: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
-                  <Fingerprint size={18} /> Confirm & Pay
+                  <Fingerprint size={18} /> {t('diaspora.confirmPay')}
                 </motion.button>
               </div>
             </motion.div>

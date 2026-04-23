@@ -254,9 +254,9 @@ export default function Legal() {
             <motion.div className="sheet-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowDraft(false)} />
             <motion.div
               className="draft-sheet glass-panel"
-              initial={{ y: '100%', x: '-50%' }}
-              animate={{ y: 0, x: '-50%' }}
-              exit={{ y: '100%', x: '-50%' }}
+              initial={{ y: '100%' }}
+              animate={{ y: 0 }}
+              exit={{ y: '100%' }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             >
               <div className="sheet-handle" />
