@@ -113,7 +113,7 @@ export default function Vault() {
             </motion.button>
           </motion.div>
         ) : (
-          <motion.div key="unlocked" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
+          <motion.div key="unlocked" variants={container} initial="hidden" animate="show" exit={{ opacity: 0 }}>
             <motion.div variants={item} className="vault-stats-row">
               <div className="vault-stat glass-panel">
                 <span className="vault-stat-num">{documents.length}</span>
