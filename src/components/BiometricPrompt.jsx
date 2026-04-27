@@ -99,7 +99,7 @@ export default function BiometricPrompt({ open, onVerified, onCancel, mode = 'fi
                   className={`bio-icon-ring ${phase === 'scanning' ? 'scanning' : ''}`}
                   animate={
                     phase === 'scanning'
-                      ? { boxShadow: ['0 0 0 0 rgba(212,175,55,0.4)', '0 0 0 24px rgba(212,175,55,0)', '0 0 0 0 rgba(212,175,55,0.4)'] }
+                      ? { boxShadow: ['0 0 0 0 rgba(255, 195, 33,0.4)', '0 0 0 24px rgba(255, 195, 33,0)', '0 0 0 0 rgba(255, 195, 33,0.4)'] }
                       : {}
                   }
                   transition={phase === 'scanning' ? { duration: 1.5, repeat: Infinity } : {}}

@@ -81,7 +81,7 @@ export default function TopUp() {
 
   const handleVerified = () => {
     setShowBio(false);
-    const ref = `HLU-TX-${Date.now().toString().slice(-6)}`;
+    const ref = `BOA-TX-${Date.now().toString().slice(-6)}`;
     setTxRef(ref);
     addTransaction({
       id: Date.now(),
@@ -104,9 +104,9 @@ export default function TopUp() {
   };
 
   const handleShareReceipt = () => {
-    const receiptText = `HULU Top Up Receipt\n─────────────────\n${selectedOp?.name}\n${packageTab === 'airtime' ? `${cost} ETB Airtime` : `${selectedData?.label} Data (${selectedData?.duration})`}\nPhone: ${phone}\nRef: ${txRef}\nDate: ${new Date().toLocaleString()}\n─────────────────\nPowered by HULU Smart Service Hub`;
+    const receiptText = `Abyssinia Top Up Receipt\n─────────────────\n${selectedOp?.name}\n${packageTab === 'airtime' ? `${cost} ETB Airtime` : `${selectedData?.label} Data (${selectedData?.duration})`}\nPhone: ${phone}\nRef: ${txRef}\nDate: ${new Date().toLocaleString()}\n─────────────────\nPowered by Abyssinia Smart Service Hub`;
     if (navigator.share) {
-      navigator.share({ title: 'HULU Top Up Receipt', text: receiptText });
+      navigator.share({ title: 'Abyssinia Top Up Receipt', text: receiptText });
     } else {
       navigator.clipboard.writeText(receiptText);
       showToast('Receipt copied to clipboard');

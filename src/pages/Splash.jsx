@@ -1,10 +1,57 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Shield, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import useStore from '../store/useStore';
 import useTranslation from '../hooks/useTranslation';
 import './Splash.css';
+
+/* Adey Abeba (6-petal flower) — Bank of Abyssinia signature logo */
+function AdeyAbebaLogo({ size = 80, color = '#FFC321', className = '' }) {
+  return (
+    <svg
+      className={className}
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {/* Outer glow */}
+      <defs>
+        <radialGradient id="petal-grad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor={color} stopOpacity="1" />
+          <stop offset="100%" stopColor="#B8860B" stopOpacity="0.9" />
+        </radialGradient>
+        <filter id="logo-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+      <g filter="url(#logo-glow)" transform="translate(50,50)">
+        {/* 6 petals */}
+        {[0, 60, 120, 180, 240, 300].map((angle) => (
+          <ellipse
+            key={angle}
+            cx="0"
+            cy="-22"
+            rx="12"
+            ry="22"
+            fill="url(#petal-grad)"
+            transform={`rotate(${angle})`}
+          />
+        ))}
+        {/* Center circle */}
+        <circle cx="0" cy="0" r="10" fill={color} />
+        <circle cx="0" cy="0" r="6" fill="#0A0A0B" />
+        <circle cx="0" cy="0" r="3" fill={color} />
+      </g>
+    </svg>
+  );
+}
 
 export default function Splash() {
   const navigate = useNavigate();
@@ -18,12 +65,12 @@ export default function Splash() {
     { emoji: '🌍', titleKey: 'splash.s4title', descKey: 'splash.s4desc' },
   ];
 
-  const [phase, setPhase] = useState('logo'); // logo → onboarding → done
+  const [phase, setPhase] = useState('logo');
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     if (phase === 'logo') {
-      const timer = setTimeout(() => setPhase('onboarding'), 2800);
+      const timer = setTimeout(() => setPhase('onboarding'), 3200);
       return () => clearTimeout(timer);
     }
   }, [phase]);
@@ -75,48 +122,49 @@ export default function Splash() {
               />
             </div>
 
-            {/* Abyssinia Bank White-Labeling */}
+            {/* Main Adey Abeba logo — animated entrance */}
             <motion.div
-              className="splash-bank-branding"
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ delay: 0.3, duration: 1, type: 'spring', stiffness: 120, damping: 12 }}
+              style={{ position: 'relative', zIndex: 2 }}
+            >
+              <AdeyAbebaLogo size={100} className="splash-flower-logo" />
+            </motion.div>
+
+            {/* Brand name */}
+            <motion.div
+              className="splash-brand"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, duration: 0.6 }}
-              style={{
-                position: 'absolute',
-                bottom: 60,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: 8
-              }}
+              transition={{ delay: 0.8, duration: 0.6 }}
             >
-              <span style={{ fontSize: 11, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '2px' }}>
-                Powered by
-              </span>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <div style={{ width: 28, height: 28, borderRadius: '6px', background: '#eab308' }}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="2" style={{ padding: '4px' }}>
-                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                  </svg>
-                </div>
-                <span style={{ fontSize: 20, fontWeight: 800, color: '#eab308', letterSpacing: '1px' }}>
-                  Abyssinia Bank
-                </span>
-              </div>
+              <h1 className="splash-brand-name">ABYSSINIA</h1>
+              <p className="splash-brand-sub">BANK OF ABYSSINIA</p>
             </motion.div>
+
+            {/* Tagline */}
+            <motion.p
+              className="splash-tagline"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.4, duration: 0.5 }}
+            >
+              Your Trusted Banking Partner Since 1996
+            </motion.p>
 
             {/* Loading bar */}
             <motion.div
               className="splash-loader"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.5 }}
+              transition={{ delay: 1.6 }}
             >
               <motion.div
                 className="splash-loader-fill"
                 initial={{ width: '0%' }}
                 animate={{ width: '100%' }}
-                transition={{ delay: 1.5, duration: 1.2, ease: 'easeInOut' }}
+                transition={{ delay: 1.6, duration: 1.4, ease: 'easeInOut' }}
               />
             </motion.div>
           </motion.div>
@@ -130,7 +178,14 @@ export default function Splash() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
           >
-            <button className="skip-btn" onClick={handleComplete}>{t('splash.skip')}</button>
+            {/* BoA small logo in top-left */}
+            <div className="onboarding-top-bar">
+              <div className="ob-top-logo">
+                <AdeyAbebaLogo size={28} />
+                <span className="ob-top-brand">Abyssinia</span>
+              </div>
+              <button className="skip-btn" onClick={handleComplete}>{t('splash.skip')}</button>
+            </div>
 
             <AnimatePresence mode="wait">
               <motion.div

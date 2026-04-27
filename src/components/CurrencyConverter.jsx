@@ -22,7 +22,7 @@ const currencyMeta = {
   CAD: { flag: '🇨🇦', name: 'Canadian Dollar' },
 };
 
-const CACHE_KEY = 'hulu-fx-rates';
+const CACHE_KEY = 'boa-fx-rates';
 const CACHE_DURATION = 3600000; // 1 hour
 
 function getCachedRates() {

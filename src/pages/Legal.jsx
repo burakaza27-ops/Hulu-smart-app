@@ -14,7 +14,7 @@ export default function Legal() {
   const t = useTranslation();
   
   const templateCards = [
-    { title: 'House Rental', subtitle: 'Residential lease agreement', icon: HomeIcon, color: '#D4AF37' },
+    { title: 'House Rental', subtitle: 'Residential lease agreement', icon: HomeIcon, color: '#FFC321' },
     { title: 'Employment', subtitle: 'Employment contract', icon: Briefcase, color: '#10B981' },
     { title: 'Vehicle Sale', subtitle: 'Vehicle purchase deed', icon: Car, color: '#3B82F6' },
     { title: 'NDA', subtitle: 'Non-disclosure agreement', icon: BookOpen, color: '#8B5CF6' },
@@ -76,7 +76,7 @@ export default function Legal() {
     let botText = '';
     try {
       const apiMessages = [
-        { role: "system", content: "You are an AI legal assistant for HULU Smart Service Hub in Ethiopia. You speak Amharic, Oromo, Tigrinya, and English. You draft contracts based on Ethiopian law. Keep responses concise (under 200 words). If the user asks for a document or provides details for a contract, end your reply with 'Here is your document:' to trigger the document sheet." },
+        { role: "system", content: "You are an AI legal assistant for Abyssinia Smart Service Hub in Ethiopia. You speak Amharic, Oromo, Tigrinya, and English. You draft contracts based on Ethiopian law. Keep responses concise (under 200 words). If the user asks for a document or provides details for a contract, end your reply with 'Here is your document:' to trigger the document sheet." },
         ...messages.filter(m => m.type === 'user' || m.type === 'bot').slice(-6).map(m => ({
           role: m.type === 'bot' ? 'assistant' : 'user',
           content: m.text
@@ -132,7 +132,7 @@ export default function Legal() {
         body: JSON.stringify({
           model: "google/gemma-2-9b-it:free",
           messages: [
-            { role: "system", content: "You are an AI legal assistant for HULU in Ethiopia. Ask the user for the missing details needed for this contract in a clear numbered list. Keep it under 150 words." },
+            { role: "system", content: "You are an AI legal assistant for Abyssinia in Ethiopia. Ask the user for the missing details needed for this contract in a clear numbered list. Keep it under 150 words." },
             { role: "user", content: `Draft a ${template.title} contract for me in Ethiopia` }
           ],
           max_tokens: 300,

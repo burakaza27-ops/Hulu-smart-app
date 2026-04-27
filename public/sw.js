@@ -1,4 +1,4 @@
-const CACHE_NAME = 'hulu-v1.4';
+const CACHE_NAME = 'abyssinia-v2.0';
 const STATIC_ASSETS = [
   '/',
   '/index.html',

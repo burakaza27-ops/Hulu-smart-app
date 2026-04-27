@@ -39,7 +39,7 @@ export default function TransactionDetail() {
   const amtStr = isPositive ? `+${tx.amount.toLocaleString('en-US', { minimumFractionDigits: 2 })}` : tx.amount.toLocaleString('en-US', { minimumFractionDigits: 2 });
 
   const handleCopyRef = () => {
-    navigator.clipboard.writeText(tx.refId || `HLU-TX-${tx.id}`);
+    navigator.clipboard.writeText(tx.refId || `BOA-TX-${tx.id}`);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -104,7 +104,7 @@ export default function TransactionDetail() {
         <div className="txd-row">
           <span className="txd-label">{t('txd.reference')}</span>
           <div className="txd-ref-row">
-            <span className="txd-val mono">{tx.refId || `HLU-TX-${tx.id}`}</span>
+            <span className="txd-val mono">{tx.refId || `BOA-TX-${tx.id}`}</span>
             <button className={`txd-copy ${copied ? 'copied' : ''}`} onClick={handleCopyRef}>
               <Copy size={14} />
             </button>
@@ -130,8 +130,8 @@ export default function TransactionDetail() {
         transition={{ delay: 0.45 }}
       >
         <motion.button className="txd-action glass-panel" whileTap={{ scale: 0.95 }} onClick={() => {
-          const receiptText = `HULU Receipt\n──────────────\n${tx.title}\nAmount: ${amtStr} ETB\nRef: ${tx.refId || `HLU-TX-${tx.id}`}\nDate: ${new Date().toLocaleString()}\nStatus: Completed\n──────────────\nHULU Smart Service Hub`;
-          if (navigator.share) { navigator.share({ title: 'HULU Receipt', text: receiptText }); }
+          const receiptText = `Abyssinia Receipt\n──────────────\n${tx.title}\nAmount: ${amtStr} ETB\nRef: ${tx.refId || `BOA-TX-${tx.id}`}\nDate: ${new Date().toLocaleString()}\nStatus: Completed\n──────────────\nAbyssinia Smart Service Hub`;
+          if (navigator.share) { navigator.share({ title: 'Abyssinia Receipt', text: receiptText }); }
           else { navigator.clipboard.writeText(receiptText); showToast('Receipt copied to clipboard'); }
         }}>
           <Share2 size={20} />

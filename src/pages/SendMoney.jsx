@@ -13,7 +13,7 @@ import { showToast } from '../components/Toast';
 import './SendMoney.css';
 
 const recentContacts = [
-  { id: 1, name: 'Almaz Kebede', initials: 'AK', color: '#D4AF37', bank: 'Abyssinia Bank', account: '****4821', phone: '+251 91 123 4567' },
+  { id: 1, name: 'Almaz Kebede', initials: 'AK', color: '#FFC321', bank: 'Abyssinia Bank', account: '****4821', phone: '+251 91 123 4567' },
   { id: 2, name: 'Tadesse Berhane', initials: 'TB', color: '#10B981', bank: 'Abyssinia Bank', account: '****7291', phone: '+251 91 234 5678' },
   { id: 3, name: 'Sara Mengistu', initials: 'SM', color: '#8B5CF6', bank: 'CBE', account: '****3104', phone: '+251 92 345 6789' },
   { id: 4, name: 'Yonas Desta', initials: 'YD', color: '#3B82F6', bank: 'Awash Bank', account: '****8456', phone: '+251 91 456 7890' },
@@ -94,7 +94,7 @@ export default function SendMoney() {
 
   const handleVerified = () => {
     setShowBio(false);
-    const ref = `HLU-TX-${Date.now().toString().slice(-6)}`;
+    const ref = `BOA-TX-${Date.now().toString().slice(-6)}`;
     setTxRef(ref);
     addTransaction({
       id: Date.now(),
@@ -119,9 +119,9 @@ export default function SendMoney() {
   };
 
   const handleShareReceipt = () => {
-    const receiptText = `HULU Transfer Receipt\n─────────────────\nTo: ${selectedContact.name}\nAmount: ${amount} ETB\nFee: ${transferFee > 0 ? transferFee + ' ETB' : 'Free'}\nRef: ${txRef}\nDate: ${new Date().toLocaleString()}\n─────────────────\nPowered by HULU Smart Service Hub`;
+    const receiptText = `Abyssinia Transfer Receipt\n─────────────────\nTo: ${selectedContact.name}\nAmount: ${amount} ETB\nFee: ${transferFee > 0 ? transferFee + ' ETB' : 'Free'}\nRef: ${txRef}\nDate: ${new Date().toLocaleString()}\n─────────────────\nPowered by Abyssinia Smart Service Hub`;
     if (navigator.share) {
-      navigator.share({ title: 'HULU Transfer Receipt', text: receiptText });
+      navigator.share({ title: 'Abyssinia Transfer Receipt', text: receiptText });
     } else {
       navigator.clipboard.writeText(receiptText);
       showToast('Receipt copied to clipboard');

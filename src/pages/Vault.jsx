@@ -12,7 +12,7 @@ import { showToast } from '../components/Toast';
 import './Vault.css';
 
 const initialDocs = [
-  { id: 1, title: 'House Title Deed', subtitle: 'Bole Sub-City', icon: Home, type: 'Property', date: 'Jan 12, 2025', verified: true, color: '#D4AF37' },
+  { id: 1, title: 'House Title Deed', subtitle: 'Bole Sub-City', icon: Home, type: 'Property', date: 'Jan 12, 2025', verified: true, color: '#FFC321' },
   { id: 2, title: 'Bachelor\'s Degree', subtitle: 'Addis Ababa University', icon: GraduationCap, type: 'Education', date: 'Jul 08, 2020', verified: true, color: '#3B82F6' },
   { id: 3, title: 'Rental Agreement', subtitle: 'Commercial Property', icon: FileCheck, type: 'Contract', date: 'Mar 15, 2025', verified: true, color: '#10B981', expires: '2026-03-15' },
   { id: 4, title: 'Business License', subtitle: 'Trade Registration', icon: FileText, type: 'Legal', date: 'Nov 22, 2024', verified: true, color: '#8B5CF6', expires: '2025-05-30', expiringSoon: true },

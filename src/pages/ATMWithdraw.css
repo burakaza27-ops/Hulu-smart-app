@@ -4,7 +4,7 @@
 /* Account Selector */
 .account-selector { display: flex; flex-direction: column; gap: 8px; margin-bottom: 4px; }
 .account-card { display: flex; align-items: center; gap: 12px; padding: 14px; border-radius: 14px; cursor: pointer; transition: all 0.2s; }
-.account-card.selected { border-color: var(--accent-gold) !important; background: rgba(212,175,55,0.06) !important; }
+.account-card.selected { border-color: var(--accent-gold) !important; background: rgba(255, 195, 33,0.06) !important; }
 .acc-info h4 { font-size: 14px; font-weight: 600; }
 .acc-info p { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
 .acc-balance { margin-left: auto; font-size: 13px; font-weight: 500; color: var(--text-secondary); }
@@ -12,7 +12,7 @@
 /* Amount Grid */
 .atm-amount-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .atm-amount-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 22px 10px; border-radius: 16px; transition: all 0.2s; cursor: pointer; }
-.atm-amount-btn.selected { border-color: var(--accent-gold) !important; background: rgba(212,175,55,0.08) !important; }
+.atm-amount-btn.selected { border-color: var(--accent-gold) !important; background: rgba(255, 195, 33,0.08) !important; }
 .atm-amt { font-size: 20px; font-weight: 700; line-height: 1; }
 .atm-curr { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
 .atm-amount-btn.selected .atm-amt { color: var(--accent-gold); }
@@ -25,14 +25,14 @@
 
 /* Generating */
 .atm-generating { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 0; gap: 24px; }
-.gen-ring { width: 80px; height: 80px; border-radius: 50%; border: 2px solid rgba(212,175,55,0.3); border-top-color: var(--accent-gold); display: flex; align-items: center; justify-content: center; color: var(--accent-gold); }
+.gen-ring { width: 80px; height: 80px; border-radius: 50%; border: 2px solid rgba(255, 195, 33,0.3); border-top-color: var(--accent-gold); display: flex; align-items: center; justify-content: center; color: var(--accent-gold); }
 .gen-progress { width: 200px; height: 4px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; }
 .gen-progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent-gold), var(--accent-emerald)); border-radius: 4px; }
 
 /* Code Toggle */
 .code-toggle { display: flex; gap: 4px; background: var(--bg-secondary); border-radius: 14px; padding: 4px; margin-bottom: 16px; }
 .ct-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 10px; border-radius: 12px; font-size: 13px; font-weight: 500; color: var(--text-muted); transition: all 0.2s; }
-.ct-btn.active { color: var(--accent-gold); background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.2); }
+.ct-btn.active { color: var(--accent-gold); background: rgba(255, 195, 33,0.1); border: 1px solid rgba(255, 195, 33,0.2); }
 
 /* Code Display */
 .code-display { padding: 28px 20px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; }
@@ -46,7 +46,7 @@
 
 /* OTP Digits */
 .otp-digits { display: flex; gap: 8px; margin: 16px 0; }
-.otp-digit { width: 44px; height: 56px; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 700; font-family: 'JetBrains Mono', monospace; color: var(--accent-gold); background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; }
+.otp-digit { width: 44px; height: 56px; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 700; font-family: 'JetBrains Mono', monospace; color: var(--accent-gold); background: rgba(255, 195, 33,0.08); border: 1px solid rgba(255, 195, 33,0.25); border-radius: 12px; }
 
 /* Countdown */
 .countdown-section { display: flex; align-items: center; gap: 8px; margin-top: 20px; padding: 10px 16px; border-radius: 10px; background: rgba(255,255,255,0.04); font-size: 13px; color: var(--text-secondary); }

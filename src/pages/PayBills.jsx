@@ -46,7 +46,7 @@ export default function PayBills() {
 
   const handleVerified = () => {
     setShowBio(false);
-    const ref = `HLU-TX-${Date.now().toString().slice(-6)}`;
+    const ref = `BOA-TX-${Date.now().toString().slice(-6)}`;
     setTxRef(ref);
     addTransaction({
       id: Date.now(),
@@ -61,8 +61,8 @@ export default function PayBills() {
   };
 
   const handleShareReceipt = () => {
-    const receiptText = `HULU Bill Payment Receipt\n─────────────────\n${selectedBill?.title} (${selectedBill?.provider})\nAccount: ${meterNum}\nAmount: ${parseFloat(amount || 0).toLocaleString()} ETB\nRef: ${txRef}\nDate: ${new Date().toLocaleString()}\n─────────────────\nPowered by HULU Smart Service Hub`;
-    if (navigator.share) { navigator.share({ title: 'HULU Receipt', text: receiptText }); }
+    const receiptText = `Abyssinia Bill Payment Receipt\n─────────────────\n${selectedBill?.title} (${selectedBill?.provider})\nAccount: ${meterNum}\nAmount: ${parseFloat(amount || 0).toLocaleString()} ETB\nRef: ${txRef}\nDate: ${new Date().toLocaleString()}\n─────────────────\nPowered by Abyssinia Smart Service Hub`;
+    if (navigator.share) { navigator.share({ title: 'Abyssinia Receipt', text: receiptText }); }
     else { navigator.clipboard.writeText(receiptText); showToast('Receipt copied to clipboard'); }
   };
 

@@ -1,13 +1,16 @@
-/* ===== HULU ONE-CARD ===== */
-.hulu-card {
+/* ===== ABYSSINIA ONE-CARD ===== */
+.abyssinia-card {
   position: relative;
   width: 100%;
   min-height: 200px;
   border-radius: var(--radius-lg);
-  background: linear-gradient(145deg, #1a1520 0%, #0d0d12 40%, #1a1215 100%);
+  background: linear-gradient(145deg, #1a1a0a 0%, #0d0d08 40%, #1a150a 100%);
   overflow: hidden;
   margin-bottom: 28px;
-  border: 1px solid rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(255, 195, 33, 0.2);
+  box-shadow:
+    0 0 40px rgba(255, 195, 33, 0.06),
+    0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 .card-shine {
@@ -19,11 +22,11 @@
   background: conic-gradient(
     from 180deg at 50% 50%,
     transparent 0deg,
-    rgba(212, 175, 55, 0.06) 60deg,
+    rgba(255, 195, 33, 0.08) 60deg,
     transparent 120deg,
-    rgba(16, 185, 129, 0.04) 180deg,
+    rgba(184, 134, 11, 0.05) 180deg,
     transparent 240deg,
-    rgba(212, 175, 55, 0.06) 300deg,
+    rgba(255, 195, 33, 0.08) 300deg,
     transparent 360deg
   );
   animation: cardShine 8s linear infinite;
@@ -55,19 +58,23 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--accent-gold);
+  color: #FFC321;
 }
 
 .card-brand {
   font-weight: 800;
   font-size: 18px;
   letter-spacing: 2px;
+  background: linear-gradient(135deg, #FFC321 0%, #FFD866 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .card-brand-sub {
   font-size: 10px;
   font-weight: 500;
-  color: var(--text-muted);
+  color: rgba(255, 195, 33, 0.5);
   letter-spacing: 1.5px;
   margin-left: 2px;
 }
@@ -76,7 +83,8 @@
   color: var(--text-secondary);
   padding: 6px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 195, 33, 0.08);
+  border: 1px solid rgba(255, 195, 33, 0.1);
 }
 
 .card-balance-section {
@@ -87,7 +95,7 @@
 
 .balance-label {
   font-size: 12px;
-  color: var(--text-muted);
+  color: rgba(255, 195, 33, 0.5);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -96,7 +104,7 @@
   font-size: 32px;
   font-weight: 700;
   letter-spacing: -0.5px;
-  background: linear-gradient(90deg, #fff 0%, var(--accent-gold) 100%);
+  background: linear-gradient(90deg, #fff 0%, #FFC321 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -110,7 +118,7 @@
 
 .card-number {
   font-size: 13px;
-  color: var(--text-muted);
+  color: rgba(255, 195, 33, 0.35);
   letter-spacing: 2px;
 }
 
@@ -130,8 +138,8 @@
   width: 36px;
   height: 28px;
   border-radius: 6px;
-  background: linear-gradient(135deg, #c9a84c 0%, #8b6914 100%);
-  opacity: 0.6;
+  background: linear-gradient(135deg, #FFC321 0%, #B8860B 100%);
+  opacity: 0.5;
 }
 
 .card-contactless {
@@ -147,7 +155,7 @@
 .contactless-wave {
   width: 14px;
   height: 14px;
-  border: 2px solid var(--accent-gold);
+  border: 2px solid #FFC321;
   border-radius: 50%;
   border-bottom-color: transparent;
   border-left-color: transparent;
@@ -168,7 +176,7 @@
 
 .see-all-btn {
   font-size: 13px;
-  color: var(--accent-gold);
+  color: #FFC321;
   font-weight: 600;
 }
 
@@ -221,7 +229,7 @@
   min-width: 160px;
   padding: 20px 16px;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(255, 195, 33, 0.08);
   flex-shrink: 0;
   scroll-snap-align: start;
   cursor: pointer;

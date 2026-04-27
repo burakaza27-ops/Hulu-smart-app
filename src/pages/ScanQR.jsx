@@ -235,7 +235,7 @@ export default function ScanQR() {
               </div>
               <div className="qr-user-info">
                 <h4>Kebede Alemu</h4>
-                <p>HULU ID: HLU-8429-10</p>
+                <p>Abyssinia ID: BOA-8429-10</p>
               </div>
             </div>
 

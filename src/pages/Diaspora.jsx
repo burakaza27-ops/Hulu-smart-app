@@ -111,7 +111,7 @@ export default function Diaspora() {
         amount: -bioAction.amount,
         type: 'bill',
         time: 'Just now',
-        refId: `HLU-TX-${Date.now().toString().slice(-6)}`,
+        refId: `BOA-TX-${Date.now().toString().slice(-6)}`,
       });
       showToast(`${bioAction.svc.label} paid: ${bioAction.amount.toLocaleString()} ETB`);
       setSelectedService(null);

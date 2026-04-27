@@ -44,7 +44,7 @@ export default function KioskLocator() {
           <div className="map-grid" />
           <motion.div
             className="user-dot"
-            animate={{ boxShadow: ['0 0 0 0 rgba(212,175,55,0.4)', '0 0 0 20px rgba(212,175,55,0)', '0 0 0 0 rgba(212,175,55,0.4)'] }}
+            animate={{ boxShadow: ['0 0 0 0 rgba(255, 195, 33,0.4)', '0 0 0 20px rgba(255, 195, 33,0)', '0 0 0 0 rgba(255, 195, 33,0.4)'] }}
             transition={{ duration: 2, repeat: Infinity }}
           />
           <div className="kiosk-pin p1"><MapPin size={24} color="#10B981" fill="#10B981" /></div>

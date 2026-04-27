@@ -1,13 +1,13 @@
 /**
- * HULU AES-256-GCM encryption for localStorage persistence.
+ * Abyssinia AES-256-GCM encryption for localStorage persistence.
  * Uses the Web Crypto API — works in all modern browsers.
  */
 
-const SALT = new TextEncoder().encode('HULU-Smart-2026');
+const SALT = new TextEncoder().encode('Abyssinia-Smart-2026');
 const KEY_USAGE = ['encrypt', 'decrypt'];
 
 // Derive a stable AES key from a passphrase
-async function deriveKey(passphrase = 'hulu-device-key') {
+async function deriveKey(passphrase = 'boa-device-key') {
   const keyMaterial = await crypto.subtle.importKey(
     'raw',
     new TextEncoder().encode(passphrase),
@@ -69,7 +69,7 @@ export async function decryptData(encryptedStr) {
  * Synchronous read for initial store hydration (reads from cache or returns {})
  * The async encrypted read happens in the background and re-hydrates.
  */
-export function readPersistedSync(storageKey = 'hulu-state') {
+export function readPersistedSync(storageKey = 'boa-state') {
   try {
     const raw = localStorage.getItem(storageKey);
     if (!raw) return {};
@@ -82,7 +82,7 @@ export function readPersistedSync(storageKey = 'hulu-state') {
 /**
  * Async read — decrypts the stored data
  */
-export async function readPersistedAsync(storageKey = 'hulu-state') {
+export async function readPersistedAsync(storageKey = 'boa-state') {
   try {
     const raw = localStorage.getItem(storageKey);
     if (!raw) return {};
@@ -93,7 +93,7 @@ export async function readPersistedAsync(storageKey = 'hulu-state') {
 /**
  * Async write — encrypts before storing
  */
-export async function writePersisted(data, storageKey = 'hulu-state') {
+export async function writePersisted(data, storageKey = 'boa-state') {
   try {
     const encrypted = await encryptData(data);
     localStorage.setItem(storageKey, encrypted);

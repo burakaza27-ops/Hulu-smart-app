@@ -64,7 +64,7 @@
 }
 
 .profile-badge.member {
-  background: rgba(212, 175, 55, 0.1);
+  background: rgba(255, 195, 33, 0.1);
   color: var(--accent-gold);
 }
 
@@ -260,7 +260,7 @@
 .info-rows { display: flex; flex-direction: column; gap: 4px; }
 .info-row { display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border-subtle); }
 .info-row:last-child { border-bottom: none; }
-.info-row-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: rgba(212,175,55,0.1); color: var(--accent-gold); }
+.info-row-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: rgba(255, 195, 33,0.1); color: var(--accent-gold); }
 .info-label { display: block; font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
 .info-value { display: block; font-size: 14px; font-weight: 500; margin-top: 2px; }
 
@@ -268,12 +268,12 @@
 .linked-account-card { display: flex; align-items: center; padding: 14px; border-radius: 14px; margin-bottom: 8px; }
 .la-info h4 { font-size: 14px; font-weight: 600; }
 .la-info p { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
-.la-primary { margin-left: auto; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; background: rgba(212,175,55,0.1); color: var(--accent-gold); }
+.la-primary { margin-left: auto; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; background: rgba(255, 195, 33,0.1); color: var(--accent-gold); }
 
 /* PIN options */
 .pin-options { display: flex; flex-direction: column; gap: 8px; }
 .pin-option { display: flex; align-items: center; gap: 12px; padding: 14px; border-radius: 14px; cursor: pointer; }
-.po-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(212,175,55,0.08); color: var(--accent-gold); }
+.po-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(255, 195, 33,0.08); color: var(--accent-gold); }
 .po-info h4 { font-size: 14px; font-weight: 600; }
 .po-info p { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
 

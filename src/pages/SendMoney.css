@@ -511,6 +511,6 @@
 .quick-amount-btn.active {
   border-color: var(--accent-gold);
   color: var(--accent-gold);
-  background: rgba(212, 175, 55, 0.08);
+  background: rgba(255, 195, 33, 0.08);
 }
 

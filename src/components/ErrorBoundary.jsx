@@ -12,7 +12,7 @@ export default class ErrorBoundary extends Component {
   }
 
   componentDidCatch(error, info) {
-    console.error('HULU Error Boundary:', error, info);
+    console.error('Abyssinia Error Boundary:', error, info);
   }
 
   handleRetry = () => {
@@ -43,7 +43,7 @@ export default class ErrorBoundary extends Component {
             style={{
               display: 'flex', alignItems: 'center', gap: 8,
               padding: '12px 24px', borderRadius: 12,
-              background: 'linear-gradient(135deg, #D4AF37, #8b6914)',
+              background: 'linear-gradient(135deg, #FFC321, #8b6914)',
               color: '#000', fontWeight: 600, fontSize: 14, border: 'none', cursor: 'pointer'
             }}
           >

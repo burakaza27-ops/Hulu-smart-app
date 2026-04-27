@@ -22,15 +22,15 @@ const item = {
 };
 
 const initialBeneficiaries = [
-  { id: 1, name: 'Sara Kebede', relation: 'Daughter', avatar: 'SK', share: '40%', color: '#D4AF37' },
+  { id: 1, name: 'Sara Kebede', relation: 'Daughter', avatar: 'SK', share: '40%', color: '#FFC321' },
   { id: 2, name: 'Yonas Kebede', relation: 'Son', avatar: 'YK', share: '35%', color: '#10B981' },
   { id: 3, name: 'Hana Kebede', relation: 'Daughter', avatar: 'HK', share: '25%', color: '#8B5CF6' },
 ];
 
-const colors = ['#D4AF37', '#10B981', '#8B5CF6', '#EF4444', '#3B82F6', '#F59E0B'];
+const colors = ['#FFC321', '#10B981', '#8B5CF6', '#EF4444', '#3B82F6', '#F59E0B'];
 
 const assets = [
-  { id: 1, title: 'Bole Residence', type: 'Property', value: '12,500,000 ETB', icon: HomeIcon, color: '#D4AF37', assigned: 'Sara Kebede' },
+  { id: 1, title: 'Bole Residence', type: 'Property', value: '12,500,000 ETB', icon: HomeIcon, color: '#FFC321', assigned: 'Sara Kebede' },
   { id: 2, title: 'Savings Account', type: 'Financial', value: '3,200,000 ETB', icon: Wallet, color: '#10B981', assigned: 'Split Equally' },
   { id: 3, title: 'Business License', type: 'Legal', value: 'N/A', icon: FileText, color: '#3B82F6', assigned: 'Yonas Kebede' },
   { id: 4, title: 'Toyota Land Cruiser', type: 'Vehicle', value: '4,800,000 ETB', icon: Car, color: '#F59E0B', assigned: 'Sara Kebede' },

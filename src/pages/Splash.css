@@ -1,14 +1,15 @@
 .splash-container {
   position: fixed;
   inset: 0;
-  background: var(--bg-primary);
+  background: #0A0A0B;
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
   background-image:
-    radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
-    radial-gradient(circle at 70% 80%, rgba(16, 185, 129, 0.04) 0%, transparent 50%);
+    radial-gradient(ellipse at 50% 40%, rgba(255, 195, 33, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(255, 195, 33, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(184, 134, 11, 0.04) 0%, transparent 40%);
 }
 
 /* ===== LOGO PHASE ===== */
@@ -16,17 +17,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   position: relative;
 }
 
 .splash-rings {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -70%);
+  transform: translate(-50%, -65%);
 }
 
 .splash-ring {
@@ -37,96 +38,130 @@
 }
 
 .splash-ring.r1 {
-  border-color: rgba(212, 175, 55, 0.15);
+  border-color: rgba(255, 195, 33, 0.2);
   animation: ringPulse 3s infinite ease-in-out;
 }
 
 .splash-ring.r2 {
-  inset: -20px;
-  border-color: rgba(212, 175, 55, 0.08);
+  inset: -24px;
+  border-color: rgba(255, 195, 33, 0.1);
   animation: ringPulse 3s infinite ease-in-out 0.5s;
 }
 
 .splash-ring.r3 {
-  inset: -40px;
-  border-color: rgba(212, 175, 55, 0.04);
+  inset: -48px;
+  border-color: rgba(255, 195, 33, 0.05);
   animation: ringPulse 3s infinite ease-in-out 1s;
 }
 
 @keyframes ringPulse {
   0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.05); opacity: 0.5; }
+  50% { transform: scale(1.06); opacity: 0.4; }
 }
 
-.splash-logo-center {
-  width: 90px;
-  height: 90px;
-  border-radius: 28px;
-  background: linear-gradient(135deg, var(--accent-gold) 0%, #8b6914 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #000;
-  box-shadow: 0 0 60px rgba(212, 175, 55, 0.3);
-  position: relative;
-  z-index: 2;
+.splash-flower-logo {
+  filter: drop-shadow(0 0 30px rgba(255, 195, 33, 0.4))
+          drop-shadow(0 0 60px rgba(255, 195, 33, 0.15));
+  animation: flowerGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes flowerGlow {
+  0% { filter: drop-shadow(0 0 30px rgba(255, 195, 33, 0.4)) drop-shadow(0 0 60px rgba(255, 195, 33, 0.15)); }
+  100% { filter: drop-shadow(0 0 40px rgba(255, 195, 33, 0.6)) drop-shadow(0 0 80px rgba(255, 195, 33, 0.25)); }
 }
 
 .splash-brand {
   text-align: center;
-  margin-top: 8px;
   position: relative;
   z-index: 2;
 }
 
 .splash-brand-name {
-  font-size: 42px;
+  font-size: 38px;
   font-weight: 800;
-  letter-spacing: 8px;
-  background: linear-gradient(90deg, var(--accent-gold), #fff, var(--accent-gold));
+  letter-spacing: 10px;
+  background: linear-gradient(135deg, #FFC321 0%, #FFD866 30%, #FFFFFF 50%, #FFD866 70%, #FFC321 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
 }
 
 .splash-brand-sub {
   font-size: 11px;
-  letter-spacing: 4px;
-  color: var(--text-muted);
-  margin-top: 6px;
+  letter-spacing: 5px;
+  color: rgba(255, 195, 33, 0.6);
+  margin-top: 8px;
   text-transform: uppercase;
+  font-weight: 500;
+}
+
+.splash-tagline {
+  font-size: 13px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+  position: relative;
+  z-index: 2;
 }
 
 .splash-loader {
-  width: 120px;
+  width: 140px;
   height: 3px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 195, 33, 0.1);
   border-radius: 4px;
   overflow: hidden;
-  margin-top: 30px;
+  margin-top: 28px;
 }
 
 .splash-loader-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent-gold), var(--accent-emerald));
+  background: linear-gradient(90deg, #FFC321, #FFD866, #FFC321);
   border-radius: 4px;
+  box-shadow: 0 0 12px rgba(255, 195, 33, 0.5);
 }
 
 /* ===== ONBOARDING PHASE ===== */
 .onboarding-phase {
   width: 100%;
   max-width: 430px;
-  padding: 60px 32px 40px;
+  padding: 20px 32px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
 }
 
+.onboarding-top-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  margin-bottom: 20px;
+}
+
+.ob-top-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ob-top-brand {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFC321;
+  letter-spacing: 1px;
+}
+
 .skip-btn {
-  position: absolute;
-  top: 56px;
-  right: 28px;
   font-size: 14px;
   font-weight: 600;
   color: var(--text-muted);
@@ -151,12 +186,13 @@
   width: 140px;
   height: 140px;
   border-radius: 40px;
-  background: rgba(212, 175, 55, 0.06);
-  border: 1px solid rgba(212, 175, 55, 0.1);
+  background: linear-gradient(135deg, rgba(255, 195, 33, 0.08) 0%, rgba(255, 195, 33, 0.02) 100%);
+  border: 1px solid rgba(255, 195, 33, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  box-shadow: 0 0 40px rgba(255, 195, 33, 0.06);
 }
 
 .slide-emoji {
@@ -168,6 +204,10 @@
   font-weight: 800;
   letter-spacing: -0.5px;
   line-height: 1.2;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFC321 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .slide-desc {
@@ -187,11 +227,12 @@
 .ob-dot {
   height: 8px;
   border-radius: 10px;
-  background: var(--border-highlight);
+  background: rgba(255, 195, 33, 0.15);
 }
 
 .ob-dot.active {
-  background: var(--accent-gold);
+  background: #FFC321;
+  box-shadow: 0 0 8px rgba(255, 195, 33, 0.4);
 }
 
 /* Next Button */
@@ -203,11 +244,16 @@
   gap: 8px;
   padding: 18px;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, var(--accent-gold) 0%, #b8860b 100%);
+  background: linear-gradient(135deg, #FFC321 0%, #D4A017 50%, #B8860B 100%);
   color: #000;
   font-size: 16px;
   font-weight: 700;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+  box-shadow:
+    0 4px 20px rgba(255, 195, 33, 0.4),
+    0 1px 3px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }

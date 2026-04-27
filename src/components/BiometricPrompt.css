@@ -60,15 +60,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid rgba(212, 175, 55, 0.3);
+  border: 2px solid rgba(255, 195, 33, 0.3);
   color: var(--accent-gold);
-  background: rgba(212, 175, 55, 0.05);
+  background: rgba(255, 195, 33, 0.05);
   transition: all 0.4s ease;
 }
 
 .bio-icon-ring.scanning {
-  border-color: rgba(212, 175, 55, 0.6);
-  background: rgba(212, 175, 55, 0.1);
+  border-color: rgba(255, 195, 33, 0.6);
+  background: rgba(255, 195, 33, 0.1);
 }
 
 .bio-icon-ring.verified {

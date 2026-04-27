@@ -47,7 +47,7 @@ export default function Dashboard() {
   };
 
   const quickActions = [
-    { icon: Send, label: t('dash.send'), color: '#D4AF37', path: '/send-money' },
+    { icon: Send, label: t('dash.send'), color: '#FFC321', path: '/send-money' },
     { icon: Receipt, label: t('dash.bills'), color: '#10B981', path: '/pay-bills' },
     { icon: QrCode, label: t('dash.scan'), color: '#8B5CF6', path: '/scan' },
     { icon: Plus, label: t('dash.topup'), color: '#F59E0B', path: '/topup' },
@@ -57,10 +57,10 @@ export default function Dashboard() {
     <motion.div variants={container} initial="hidden" animate="show">
       <Header title={getGreeting()} subtitle={t('dash.welcome')} />
 
-      {/* HULU One-Card */}
+      {/* Abyssinia One-Card */}
       <motion.div
         variants={item}
-        className="hulu-card"
+        className="abyssinia-card"
         onClick={() => navigate('/card')}
         style={{ cursor: 'pointer' }}
       >
@@ -68,8 +68,18 @@ export default function Dashboard() {
         <div className="card-content">
           <div className="card-header-row">
             <div className="card-logo">
-              <CreditCard size={20} />
-              <span className="card-brand">HULU</span>
+              {/* Adey Abeba mini icon */}
+              <svg width="22" height="22" viewBox="0 0 100 100" fill="none">
+                <g transform="translate(50,50)">
+                  {[0, 60, 120, 180, 240, 300].map((angle) => (
+                    <ellipse key={angle} cx="0" cy="-22" rx="12" ry="22" fill="#FFC321" transform={`rotate(${angle})`} />
+                  ))}
+                  <circle cx="0" cy="0" r="10" fill="#FFC321" />
+                  <circle cx="0" cy="0" r="6" fill="#1a1520" />
+                  <circle cx="0" cy="0" r="3" fill="#FFC321" />
+                </g>
+              </svg>
+              <span className="card-brand">Abyssinia</span>
               <span className="card-brand-sub">{t('card.onecard')}</span>
             </div>
             <motion.button
@@ -113,10 +123,10 @@ export default function Dashboard() {
         </div>
       </motion.div>
 
-      {/* Bank Connect - Abyssinia Bank */}
+      {/* Bank Connect - Bank of Abyssinia */}
       <motion.div variants={item} className="section" style={{ marginTop: 16 }}>
         <motion.button
-          className="glass-panel"
+          className="glass-panel boa-connect-btn"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           style={{
@@ -127,21 +137,25 @@ export default function Dashboard() {
             gap: 12,
             padding: 16,
             borderRadius: 16,
-            background: 'linear-gradient(135deg, rgba(234, 179, 8, 0.15) 0%, rgba(234, 179, 8, 0.05) 100%)',
-            border: '1px solid rgba(234, 179, 8, 0.3)',
-            color: '#eab308',
+            background: 'linear-gradient(135deg, rgba(255, 195, 33, 0.15) 0%, rgba(184, 134, 11, 0.08) 100%)',
+            border: '1px solid rgba(255, 195, 33, 0.3)',
+            color: '#FFC321',
             fontSize: 15,
             fontWeight: 700,
             cursor: 'pointer',
             marginBottom: 16
           }}
-          onClick={() => alert("Abyssinia Bank Account Linked Successfully!")}
+          onClick={() => alert("Bank of Abyssinia Account Linked Successfully!")}
         >
-          <div style={{ width: 20, height: 20, borderRadius: 4, background: '#eab308', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="2.5" style={{ padding: '2px' }}>
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-          </div>
+          {/* Adey Abeba mini */}
+          <svg width="22" height="22" viewBox="0 0 100 100" fill="none">
+            <g transform="translate(50,50)">
+              {[0, 60, 120, 180, 240, 300].map((a) => (
+                <ellipse key={a} cx="0" cy="-22" rx="12" ry="22" fill="#FFC321" transform={`rotate(${a})`} />
+              ))}
+              <circle cx="0" cy="0" r="10" fill="#FFC321" />
+            </g>
+          </svg>
           Link your Abyssinia Account
         </motion.button>
 
@@ -156,7 +170,7 @@ export default function Dashboard() {
             whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 }}>
-              <div style={{ padding: '6px 10px', background: 'rgba(234,179,8,0.2)', color: '#eab308', borderRadius: 20, fontSize: 11, fontWeight: 700, display: 'flex', gap: 4, alignItems: 'center' }}>
+              <div style={{ padding: '6px 10px', background: 'rgba(255,195,33,0.2)', color: '#FFC321', borderRadius: 20, fontSize: 11, fontWeight: 700, display: 'flex', gap: 4, alignItems: 'center' }}>
                 <Star size={12} /> Personal Loan
               </div>
               <div style={{ color: 'var(--text-muted)' }}><ChevronRight size={18} /></div>
@@ -207,7 +221,7 @@ export default function Dashboard() {
         </div>
       </motion.div>
 
-      {/* HULU Services Overview */}
+      {/* Abyssinia Services Overview */}
       <motion.div variants={item} className="section">
         <div className="section-header">
           <span className="caption">{t('dash.services')}</span>

@@ -51,6 +51,6 @@
 }
 
 .toast-item.info .toast-icon {
-  background: rgba(212, 175, 55, 0.15);
+  background: rgba(255, 195, 33, 0.15);
   color: var(--accent-gold);
 }

@@ -9,7 +9,7 @@
   font-size: 12px;
   font-weight: 600;
   color: var(--accent-gold);
-  background: rgba(212, 175, 55, 0.1);
+  background: rgba(255, 195, 33, 0.1);
   padding: 6px 12px;
   border-radius: 20px;
   border: none;
@@ -39,8 +39,8 @@
 }
 
 .nf-tab.active {
-  background: rgba(212, 175, 55, 0.1);
-  border-color: rgba(212, 175, 55, 0.2);
+  background: rgba(255, 195, 33, 0.1);
+  border-color: rgba(255, 195, 33, 0.2);
   color: var(--accent-gold);
 }
 
@@ -74,7 +74,7 @@
 
 .notif-item.unread {
   border-left: 3px solid var(--accent-gold);
-  background: rgba(212, 175, 55, 0.03);
+  background: rgba(255, 195, 33, 0.03);
 }
 
 .notif-icon {

@@ -30,7 +30,7 @@ const colors = {
   transfer: '#EF4444',
   security: '#3B82F6',
   bill: '#F59E0B',
-  vault: '#D4AF37',
+  vault: '#FFC321',
   system: '#8B5CF6'
 };
 

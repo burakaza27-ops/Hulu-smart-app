@@ -1,5 +1,5 @@
 /**
- * HULU Supabase Auth Helper
+ * Abyssinia Supabase Auth Helper
  * Provides sign-up, sign-in (phone OTP + email), session management, and profile sync.
  * Falls back gracefully when Supabase is not configured.
  */

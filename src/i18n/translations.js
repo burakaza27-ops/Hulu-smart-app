@@ -1,8 +1,8 @@
-// HULU i18n — English / Amharic / Afaan Oromoo / Tigrinya translation dictionary
+// Abyssinia i18n — English / Amharic / Afaan Oromoo / Tigrinya translation dictionary
 const translations = {
   // ===== Common =====
-  'app.name': { en: "HULU", am: "ሁሉ", om: "HULU", ti: "ሁሉ" },
-  'app.tagline': { en: "SMART SERVICE HUB", am: "ዘመናዊ አገልግሎት ማዕከል", om: "WIIRTUU TAJAAJILAA OGUMMAA", ti: "ዘመናዊ ማእከል ኣገልግሎት" },
+  'app.name': { en: "Abyssinia", am: "አቢሲኒያ", om: "Abyssinia", ti: "ኣቢሲንያ" },
+  'app.tagline': { en: "BANK OF ABYSSINIA", am: "የአቢሲኒያ ባንክ", om: "Baankii Abyssinia", ti: "ባንክ ኣቢሲንያ" },
 
   // ===== Navigation =====
   'nav.dashboard': { en: "Dashboard", am: "ዳሽቦርድ", om: "Gabatee", ti: "ዳሽቦርድ" },
@@ -26,7 +26,7 @@ const translations = {
   'dash.bills': { en: "Bills", am: "ክፍያ", om: "Bilbila", ti: "ክፍሊት" },
   'dash.scan': { en: "Scan", am: "ስካን", om: "Iskaan", ti: "ስካን" },
   'dash.topup': { en: "Top Up", am: "ሙላ", om: "Guuti", ti: "ምልኣእ" },
-  'dash.services': { en: "HULU Services", am: "የHULU አገልግሎቶች", om: "Tajaajila HULU", ti: "ኣገልግሎት HULU" },
+  'dash.services': { en: "Abyssinia Services", am: "የአቢሲኒያ አገልግሎቶች", om: "Tajaajila Abyssinia", ti: "ኣገልግሎት ኣቢሲንያ" },
   'dash.recentActivity': { en: "Recent Activity", am: "የቅርብ ጊዜ እንቅስቃሴ", om: "Sochii Dhiyoo", ti: "ናይ ቀረባ ንጥፈታት" },
   'dash.seeAll': { en: "See All", am: "ሁሉንም ይመልከቱ", om: "Hunda Ilaali", ti: "ኩሉ ርአ" },
   'dash.virtualVault': { en: "Virtual Vault", am: "ዲጂታል ካዝና", om: "Kuusaa Dijitaalaa", ti: "ዲጂታል ካዝና" },
@@ -48,11 +48,11 @@ const translations = {
 
   // ===== Card =====
   'card.onecard': { en: "ONE-CARD", am: "ዋን-ካርድ", om: "ONE-CARD", ti: "ዋን-ካርድ" },
-  'card.title': { en: "HULU One-Card", am: "HULU ዋን-ካርድ", om: "HULU One-Card", ti: "HULU ዋን-ካርድ" },
+  'card.title': { en: "Abyssinia One-Card", am: "አቢሲኒያ ዋን-ካርድ", om: "Abyssinia One-Card", ti: "ኣቢሲንያ ዋን-ካርድ" },
 
   // ===== Pay Bills =====
   'bills.title': { en: "Pay Bills", am: "ክፍያ ይፈጽሙ", om: "Bilbila Kafali", ti: "ክፍሊት ፈጽም" },
-  'bills.desc': { en: "Select a service provider to pay your bill directly through HULU.", am: "አገልግሎት አቅራቢ ይምረጡ። ክፍያውን በቀጥታ በHULU ይፈጽሙ።", om: "Tajaajila kennu filadhuutii kallattiin karaa HULU kaffali.", ti: "ኣገልግሎት ወሃቢ መሪጽካ ብቐጥታ ብHULU ክፍሊት ፈጽም።" },
+  'bills.desc': { en: "Select a service provider to pay your bill directly through Abyssinia.", am: "አገልግሎት አቅራቢ ይምረጡ። ክፍያውን በቀጥታ በአቢሲኒያ ይፈጽሙ።", om: "Tajaajila kennu filadhuutii kallattiin karaa Abyssinia kaffali.", ti: "ኣገልግሎት ወሃቢ መሪጽካ ብቐጥታ ብኣቢሲንያ ክፍሊት ፈጽም።" },
   'bills.electric': { en: "Ethiopian Electric", am: "የኢትዮጵያ ኤሌክትሪክ", om: "Ibsaa Itoophiyaa", ti: "ኤሌክትሪክ ኢትዮጵያ" },
   'bills.water': { en: "Water & Sewerage", am: "ውሃና ፍሳሽ", om: "Bishaanii fi Dhangala'aa", ti: "ማይ" },
   'bills.telecom': { en: "Ethio Telecom", am: "ኢትዮ ቴሌኮም", om: "Iitiiyoo Teeleekoom", ti: "ኢትዮ ቴሌኮም" },
@@ -184,7 +184,7 @@ const translations = {
   'profile.darkMode': { en: "Dark Mode", am: "ጨለማ ሁነታ", om: "Dukkana", ti: "ጸሊም ድሕረ ባይታ" },
   'profile.helpCenter': { en: "Help Center", am: "የእርዳታ ማዕከል", om: "Giddugala Gargaarsaa", ti: "ማእከል ሓገዝ" },
   'profile.terms': { en: "Terms & Conditions", am: "ደንብና ሁኔታዎች", om: "Dambii fi Haala", ti: "ውዕልን ኩነታትን" },
-  'profile.about': { en: "About HULU", am: "ስለ HULU", om: "Waa'ee HULU", ti: "ብዛዕባ HULU" },
+  'profile.about': { en: "About Abyssinia", am: "ስለ አቢሲኒያ", om: "Waa'ee Abyssinia", ti: "ብዛዕባ ኣቢሲንያ" },
   'profile.signOut': { en: "Sign Out", am: "ውጣ", om: "Ba'i", ti: "ውጻእ" },
   'profile.account': { en: "Account", am: "አካውንት", om: "Herrega", ti: "ኣካውንት" },
   'profile.security': { en: "Security", am: "ደህንነት", om: "Nageenya", ti: "ድሕነት" },
@@ -192,7 +192,7 @@ const translations = {
   'profile.support': { en: "Support", am: "ድጋፍ", om: "Gargaarsa", ti: "ሓገዝ" },
 
   // ===== Kiosk Locator =====
-  'kiosk.title': { en: "Find a HULU Hub", am: "HULU ማዕከል ያግኙ", om: "Wiirtuu HULU barbaadi", ti: "HULU ማእከል ድለ" },
+  'kiosk.title': { en: "Find an Abyssinia Hub", am: "የአቢሲኒያ ማዕከል ያግኙ", om: "Wiirtuu Abyssinia barbaadi", ti: "ማእከል ኣቢሲንያ ድለ" },
   'kiosk.yourLocation': { en: "Your Location: Bole, Addis Ababa", am: "የእርስዎ ቦታ: ቦሌ፣ አዲስ አበባ", om: "Bakka Kee: Boolee, Finfinnee", ti: "ቦታኻ: ቦሌ፡ ኣዲስ ኣበባ" },
   'kiosk.online': { en: "Online", am: "ገቢር", om: "Toora irra", ti: "ኣብ መስመር" },
   'kiosk.offline': { en: "Offline", am: "ቋ ርጧል", om: "Toora irraa ala", ti: "ካብ መስመር ወጻኢ" },
@@ -207,7 +207,7 @@ const translations = {
 
   // ===== Splash / Onboarding =====
   'splash.s1title': { en: "One Card. Everything.", am: "አንድ ካርድ። ሁሉም ነገር።", om: "Kaardii Tokko. Waan Hunda.", ti: "ሓደ ካርድ። ኩሉ ነገር።" },
-  'splash.s1desc': { en: "Bank, pay bills, and prove your identity — all from a single HULU One-Card linked to your fingerprint.", am: "ባንክ ይጠቀሙ፣ ክፍያ ይፈጽሙ፣ ማንነትዎን ያረጋግጡ — ሁሉም ከአንድ HULU ካርድ በጣት አሻራዎ።", om: "Baankii, kaffaltii fi eenyummaa - hundi kaardii tokkoon.", ti: "ባንክ፡ ክፍሊት፡ መንነት - ኩሉ ብሓደ ካርድ።" },
+  'splash.s1desc': { en: "Bank, pay bills, and prove your identity — all from a single Abyssinia One-Card linked to your fingerprint.", am: "ባንክ ይጠቀሙ፣ ክፍያ ይፈጽሙ፣ ማንነትዎን ያረጋግጡ — ሁሉም ከአንድ የአቢሲኒያ ካርድ በጣት አሻራዎ።", om: "Baankii, kaffaltii fi eenyummaa - hundi kaardii tokkoon.", ti: "ባንክ፡ ክፍሊት፡ መንነት - ኩሉ ብሓደ ካርድ።" },
   'splash.s2title': { en: "Military-Grade Vault", am: "ከፍተኛ ደረጃ ካዝና", om: "Kuusaa Sadarkaa Loltummaa", ti: "ናይ ወተሃደራዊ ደረጃ ካዝና" },
   'splash.s2desc': { en: "Store your title deeds, diplomas, and contracts in an AES-256 encrypted digital safe. Access them anywhere.", am: "የቤት ካርታ፣ ዲፕሎማ እና ውሎችን በAES-256 ምስጢራዊ ዲጂታል ካዝና ያስቀምጡ። ከየትኛውም ቦታ ይድረሱ።", om: "Dokumantiiwwan iccitii ta'an kuusaa keessatti olkaa'i.", ti: "ምስጢራዊ ሰነዳትካ ኣብ ካዝናኻ ዓቅብ።" },
   'splash.s3title': { en: "AI Legal Drafting", am: "AI የህግ ረቂቅ", om: "Qophii Seeraa AI", ti: "AI ምድላው ሕጊ" },
@@ -264,7 +264,7 @@ const translations = {
   'atm.confirmWithdraw': { en: "Confirm Withdrawal", am: "ማውጣቱን ያረጋግጡ", om: "Baasuu Mirkaneessi", ti: "መውጽኢ ኣረጋግጽ" },
   'atm.generating': { en: "Generating secure code...", am: "አስተማማኝ ኮድ በመፍጠር ላይ...", om: "Koodii icciti uumaa jira...", ti: "ምስጢራዊ ኮድ የዳሉ ኣሎ..." },
   'atm.yourCode': { en: "Your Withdrawal Code", am: "የማውጫ ኮድዎ", om: "Koodii baasii kee", ti: "መውጽኢ ኮድካ" },
-  'atm.scanAtAtm': { en: "Scan this QR at any HULU ATM", am: "ይህን QR በማንኛውም HULU ATM ይቃኙ", om: "QR kana ATM HULU irra iskaan godhi", ti: "እዚ QR ኣብ ዝኾነ ATM HULU ስካን ግበር" },
+  'atm.scanAtAtm': { en: "Scan this QR at any Abyssinia ATM", am: "ይህን QR በማንኛውም አቢሲኒያ ATM ይቃኙ", om: "QR kana ATM Abyssinia irra iskaan godhi", ti: "እዚ QR ኣብ ዝኾነ ATM ኣቢሲንያ ስካን ግበር" },
   'atm.orEnterCode': { en: "Or enter this code manually", am: "ወይም ይህን ኮድ በእጅ ያስገቡ", om: "Ykn koodii kana galchi", ti: "ወይ እዚ ኮድ የእትዉ" },
   'atm.expiresIn': { en: "Expires in", am: "የሚያልቀው በ", om: "Kan dhumu", ti: "ዘብቅዕ ኣብ" },
   'atm.findAtm': { en: "Find Nearest ATM", am: "ቅርቡን ATM ያግኙ", om: "ATM dhiyoo barbaadi", ti: "ቀረባ ATM ድለ" },

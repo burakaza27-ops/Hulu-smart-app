@@ -12,7 +12,7 @@
 .phone-section { margin-bottom: 20px; }
 .phone-toggle { display: flex; gap: 4px; margin-bottom: 10px; background: var(--bg-secondary); border-radius: 10px; padding: 3px; }
 .pt-btn { flex: 1; padding: 8px; border-radius: 8px; font-size: 13px; font-weight: 500; color: var(--text-muted); transition: all 0.2s; }
-.pt-btn.active { color: var(--accent-gold); background: rgba(212,175,55,0.1); }
+.pt-btn.active { color: var(--accent-gold); background: rgba(255, 195, 33,0.1); }
 
 .phone-input-row { display: flex; align-items: center; gap: 10px; padding: 14px; border-radius: 14px; }
 .phone-input { flex: 1; background: none; border: none; color: var(--text-primary); font-size: 16px; font-weight: 500; letter-spacing: 1px; outline: none; }
@@ -20,18 +20,18 @@
 .package-tabs { display: flex; gap: 4px; background: var(--bg-secondary); border-radius: 14px; padding: 4px; margin-bottom: 16px; }
 .pkg-tab { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 10px; border-radius: 12px; font-size: 13px; font-weight: 500; color: var(--text-muted); position: relative;  overflow: hidden; }
 .pkg-tab.active { color: var(--text-primary); }
-.pkg-tab .tab-indicator { position: absolute; inset: 0; background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.2); border-radius: 12px; z-index: -1; }
+.pkg-tab .tab-indicator { position: absolute; inset: 0; background: rgba(255, 195, 33,0.1); border: 1px solid rgba(255, 195, 33,0.2); border-radius: 12px; z-index: -1; }
 
 .airtime-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .airtime-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px 10px; border-radius: 16px; transition: all 0.2s; }
-.airtime-btn.selected { border-color: var(--accent-gold) !important; background: rgba(212,175,55,0.08) !important; }
+.airtime-btn.selected { border-color: var(--accent-gold) !important; background: rgba(255, 195, 33,0.08) !important; }
 .airtime-amount { font-size: 22px; font-weight: 700; line-height: 1; }
 .airtime-currency { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
 .airtime-btn.selected .airtime-amount { color: var(--accent-gold); }
 
 .data-list { display: flex; flex-direction: column; gap: 8px; }
 .data-card { display: flex; align-items: center; gap: 14px; padding: 16px; border-radius: 14px; cursor: pointer; transition: all 0.2s; }
-.data-card.selected { border-color: var(--accent-gold) !important; background: rgba(212,175,55,0.08) !important; }
+.data-card.selected { border-color: var(--accent-gold) !important; background: rgba(255, 195, 33,0.08) !important; }
 .data-info h4 { font-size: 15px; font-weight: 600; }
 .data-info p { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
 .data-price { margin-left: auto; font-size: 14px; font-weight: 600; color: var(--accent-gold); }
@@ -47,8 +47,8 @@
   margin-top: 16px;
   padding: 16px;
   border-radius: 16px;
-  background: rgba(212, 175, 55, 0.03);
-  border: 1px solid rgba(212, 175, 55, 0.08);
+  background: rgba(255, 195, 33, 0.03);
+  border: 1px solid rgba(255, 195, 33, 0.08);
 }
 
 .custom-amount-header {
@@ -85,14 +85,14 @@
 
 .custom-amount-input-row.active {
   border-color: var(--accent-gold) !important;
-  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.15), 0 0 20px rgba(212, 175, 55, 0.05);
+  box-shadow: 0 0 0 1px rgba(255, 195, 33, 0.15), 0 0 20px rgba(255, 195, 33, 0.05);
 }
 
 .custom-currency-tag {
   font-size: 14px;
   font-weight: 700;
   color: var(--accent-gold);
-  background: rgba(212, 175, 55, 0.1);
+  background: rgba(255, 195, 33, 0.1);
   padding: 6px 12px;
   border-radius: 8px;
   letter-spacing: 0.5px;

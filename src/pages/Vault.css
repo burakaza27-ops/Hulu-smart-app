@@ -21,7 +21,7 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 2px dashed rgba(212, 175, 55, 0.2);
+  border: 2px dashed rgba(255, 195, 33, 0.2);
 }
 
 .vault-ring-segment {
@@ -53,7 +53,7 @@
   height: 100px;
   border-radius: 50%;
   background: var(--bg-secondary);
-  border: 2px solid rgba(212, 175, 55, 0.3);
+  border: 2px solid rgba(255, 195, 33, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -328,7 +328,7 @@
 .filter-btn.active { color: var(--accent-gold); }
 .filter-bar { display: flex; gap: 6px; margin-bottom: 16px; overflow-x: auto; padding: 2px 0; }
 .filter-chip { padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); color: var(--text-muted); white-space: nowrap; transition: all 0.2s; }
-.filter-chip.active { background: rgba(212,175,55,0.1); border-color: var(--accent-gold); color: var(--accent-gold); }
+.filter-chip.active { background: rgba(255, 195, 33,0.1); border-color: var(--accent-gold); color: var(--accent-gold); }
 
 /* Upload Modal */
 .upload-area { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 40px 20px; border-radius: 16px; border: 2px dashed var(--border-highlight); margin-bottom: 20px; cursor: pointer; }

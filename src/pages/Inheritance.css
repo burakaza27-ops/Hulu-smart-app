@@ -5,7 +5,7 @@
   gap: 14px;
   padding: 18px;
   margin-bottom: 24px;
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(212, 175, 55, 0.04) 100%);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(255, 195, 33, 0.04) 100%);
   border-color: rgba(245, 158, 11, 0.15);
 }
 
@@ -29,7 +29,7 @@
   font-size: 12px;
   font-weight: 600;
   color: var(--accent-gold);
-  background: rgba(212, 175, 55, 0.1);
+  background: rgba(255, 195, 33, 0.1);
   padding: 6px 12px;
   border-radius: 20px;
 }
@@ -175,10 +175,10 @@
   font-size: 13px;
   font-weight: 500;
   color: var(--accent-gold);
-  background: rgba(212, 175, 55, 0.08);
+  background: rgba(255, 195, 33, 0.08);
   padding: 8px 12px;
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(255, 195, 33, 0.15);
 }
 
 .sc-arrow {
@@ -344,7 +344,7 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: rgba(212, 175, 55, 0.08);
+  background: rgba(255, 195, 33, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;

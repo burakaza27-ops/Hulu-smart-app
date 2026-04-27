@@ -35,8 +35,8 @@
 .scan-tab .tab-indicator {
   position: absolute;
   inset: 0;
-  background: rgba(212, 175, 55, 0.1);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  background: rgba(255, 195, 33, 0.1);
+  border: 1px solid rgba(255, 195, 33, 0.2);
   border-radius: 12px;
   z-index: -1;
 }
@@ -78,7 +78,7 @@
   width: 80%;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
-  box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+  box-shadow: 0 0 12px rgba(255, 195, 33, 0.6);
 }
 
 .scanner-hint {
@@ -109,7 +109,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(212, 175, 55, 0.1);
+  background: rgba(255, 195, 33, 0.1);
   color: var(--accent-gold);
 }
 
@@ -194,7 +194,7 @@
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 12px;
-  background: rgba(212, 175, 55, 0.1);
+  background: rgba(255, 195, 33, 0.1);
   color: var(--accent-gold);
 }
 

@@ -70,7 +70,7 @@ export default function CardDetail() {
       </div>
 
       <motion.div variants={item} className={`card-flip-container ${isFlipped ? 'flipped' : ''}`} onClick={() => setIsFlipped(!isFlipped)}>
-        <motion.div className={`hulu-card large-card card-front ${isFrozen ? 'frozen' : ''}`}>
+        <motion.div className={`abyssinia-card large-card card-front ${isFrozen ? 'frozen' : ''}`}>
           <div className="card-shine" />
           {isFrozen && (
             <motion.div className="freeze-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
@@ -81,8 +81,17 @@ export default function CardDetail() {
           <div className="card-content">
             <div className="card-header-row">
               <div className="card-logo">
-                <CreditCard size={20} />
-                <span className="card-brand">HULU</span>
+                <svg width="22" height="22" viewBox="0 0 100 100" fill="none">
+                  <g transform="translate(50,50)">
+                    {[0, 60, 120, 180, 240, 300].map((angle) => (
+                      <ellipse key={angle} cx="0" cy="-22" rx="12" ry="22" fill="#FFC321" transform={`rotate(${angle})`} />
+                    ))}
+                    <circle cx="0" cy="0" r="10" fill="#FFC321" />
+                    <circle cx="0" cy="0" r="6" fill="#1a1520" />
+                    <circle cx="0" cy="0" r="3" fill="#FFC321" />
+                  </g>
+                </svg>
+                <span className="card-brand">Abyssinia</span>
                 <span className="card-brand-sub">{t('card.onecard')}</span>
               </div>
               <div className="contactless-wave" style={{ position: 'relative', right: 0 }} />
@@ -109,7 +118,7 @@ export default function CardDetail() {
         </motion.div>
 
         {/* Back of the card */}
-        <motion.div className={`hulu-card large-card card-back ${isFrozen ? 'frozen' : ''}`}>
+        <motion.div className={`abyssinia-card large-card card-back ${isFrozen ? 'frozen' : ''}`}>
           <div className="card-magnetic-stripe"></div>
           <div className="card-back-content">
             <div className="cvv-strip">
@@ -169,7 +178,7 @@ export default function CardDetail() {
               <div className="sheet-handle" />
               <button className="sheet-close" onClick={() => setShowLimits(false)}><X size={20} /></button>
               <h3>Spending Limits</h3>
-              <p style={{ fontSize: 13, color: 'var(--text-muted)', margin: '8px 0 20px' }}>Set daily transaction limits for your HULU One-Card.</p>
+              <p style={{ fontSize: 13, color: 'var(--text-muted)', margin: '8px 0 20px' }}>Set daily transaction limits for your Abyssinia One-Card.</p>
               <div className="limit-display">
                 <span className="limit-label">Daily Limit</span>
                 <span className="limit-value">{dailyLimit.toLocaleString()} ETB</span>

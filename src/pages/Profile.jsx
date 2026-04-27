@@ -52,7 +52,7 @@ export default function Profile() {
 
   const handleSignOut = () => {
     // Reset splash state so onboarding shows again
-    try { localStorage.removeItem('hulu-state'); } catch {}
+    try { localStorage.removeItem('boa-state'); } catch {}
     window.location.href = '/splash';
   };
 
@@ -68,7 +68,7 @@ export default function Profile() {
           </div>
           <div className="profile-info-main">
             <h3>Kebede Alemu</h3>
-            <p>HULU ID: HLU-8429-10</p>
+            <p>Abyssinia ID: BOA-8429-10</p>
             <span className="kyc-badge">Level 3 Verified KYC</span>
           </div>
         </div>
@@ -90,7 +90,7 @@ export default function Profile() {
             </div>
             <div className="pl-item" onClick={() => navigate('/kiosk')}>
               <div className="pl-icon" style={{color: 'var(--accent-gold)'}}><MapPin size={18} /></div>
-              <span>HULU Kiosk Locator</span>
+              <span>Abyssinia Kiosk Locator</span>
               <ChevronRight size={18} color="var(--text-muted)" />
             </div>
           </div>
@@ -180,7 +180,7 @@ export default function Profile() {
                   { icon: Mail, label: 'Email', value: 'kebede.alemu@email.com' },
                   { icon: Calendar, label: 'Date of Birth', value: 'March 15, 1990' },
                   { icon: MapPin, label: 'Address', value: 'Bole Sub-City, Addis Ababa' },
-                  { icon: CreditCard, label: 'HULU ID', value: 'HLU-8429-10' },
+                  { icon: CreditCard, label: 'Abyssinia ID', value: 'BOA-8429-10' },
                 ].map((r, i) => (
                   <div key={i} className="info-row">
                     <div className="info-row-icon"><r.icon size={16} /></div>
@@ -372,14 +372,14 @@ export default function Profile() {
                   <div className="po-info"><h4>Live Chat</h4><p>Chat with support agent</p></div>
                   <ChevronRight size={16} color="var(--text-muted)" />
                 </motion.div>
-                <motion.div className="pin-option glass-panel" whileTap={{ scale: 0.98 }} onClick={() => { window.open('tel:+251115501000'); showToast('Calling HULU Support...', 'info'); }}>
+                <motion.div className="pin-option glass-panel" whileTap={{ scale: 0.98 }} onClick={() => { window.open('tel:+251115501000'); showToast('Calling Abyssinia Support...', 'info'); }}>
                   <div className="po-icon"><Phone size={20} /></div>
                   <div className="po-info"><h4>Call Center</h4><p>+251 11 550 1000</p></div>
                   <ChevronRight size={16} color="var(--text-muted)" />
                 </motion.div>
-                <motion.div className="pin-option glass-panel" whileTap={{ scale: 0.98 }} onClick={() => { window.open('https://hulu.et', '_blank'); }}>
+                <motion.div className="pin-option glass-panel" whileTap={{ scale: 0.98 }} onClick={() => { window.open('https://bankofabyssinia.com', '_blank'); }}>
                   <div className="po-icon"><ExternalLink size={20} /></div>
-                  <div className="po-info"><h4>Visit Website</h4><p>hulu.et</p></div>
+                  <div className="po-info"><h4>Visit Website</h4><p>bankofabyssinia.com</p></div>
                   <ChevronRight size={16} color="var(--text-muted)" />
                 </motion.div>
               </div>
@@ -398,17 +398,17 @@ export default function Profile() {
               <button className="sheet-close" onClick={() => setShowTerms(false)}><X size={20} /></button>
               <h3 style={{ marginBottom: 16 }}>{t('profile.terms')}</h3>
               <div className="terms-content">
-                <p><strong>HULU Smart Service Hub</strong></p>
+                <p><strong>Abyssinia Smart Service Hub</strong></p>
                 <p>Version 1.1 — Last Updated: April 2026</p>
                 <br />
                 <p><strong>1. Acceptance of Terms</strong></p>
-                <p>By accessing and using the HULU Smart Service Hub application, you agree to be bound by these Terms and Conditions and all applicable laws and regulations of the Federal Democratic Republic of Ethiopia.</p>
+                <p>By accessing and using the Abyssinia Smart Service Hub application, you agree to be bound by these Terms and Conditions and all applicable laws and regulations of the Federal Democratic Republic of Ethiopia.</p>
                 <br />
                 <p><strong>2. Digital Identity</strong></p>
-                <p>Your HULU One-Card and associated biometric data are protected under Ethiopian Data Protection Proclamation No. 1288/2023. We employ AES-256 encryption for all stored documents and biometric templates.</p>
+                <p>Your Abyssinia One-Card and associated biometric data are protected under Ethiopian Data Protection Proclamation No. 1288/2023. We employ AES-256 encryption for all stored documents and biometric templates.</p>
                 <br />
                 <p><strong>3. Financial Services</strong></p>
-                <p>HULU operates in partnership with Bank of Abyssinia under NBE License No. MFI/007/2024. All financial transactions are subject to Ethiopian banking regulations and anti-money laundering (AML) requirements.</p>
+                <p>Abyssinia operates in partnership with Bank of Abyssinia under NBE License No. MFI/007/2024. All financial transactions are subject to Ethiopian banking regulations and anti-money laundering (AML) requirements.</p>
                 <br />
                 <p><strong>4. Smart Contracts</strong></p>
                 <p>Digital inheritance smart contracts are legally binding under Ethiopian Civil Code Article 826-906. Biometric sealing constitutes a valid digital signature per E-Transaction Proclamation No. 1072/2018.</p>
@@ -426,7 +426,7 @@ export default function Profile() {
             <motion.div className="signout-modal glass-panel" initial={{ opacity: 0, scale: 0.9, y: '-50%' }} animate={{ opacity: 1, scale: 1, y: '-50%' }} exit={{ opacity: 0, scale: 0.9, y: '-50%' }}>
               <LogOut size={32} color="#EF4444" />
               <h3>Sign Out?</h3>
-              <p>Are you sure you want to sign out of your HULU account?</p>
+              <p>Are you sure you want to sign out of your Abyssinia account?</p>
               <div className="signout-actions">
                 <motion.button className="btn-secondary" whileTap={{ scale: 0.95 }} onClick={() => setShowSignOut(false)}>Cancel</motion.button>
                 <motion.button className="btn-danger" whileTap={{ scale: 0.95 }} onClick={handleSignOut}>Sign Out</motion.button>
