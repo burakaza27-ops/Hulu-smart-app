@@ -1,4 +1,4 @@
-const CACHE_NAME = 'abyssinia-v2.0';
+const CACHE_NAME = 'abyssinia-v2.1';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -29,6 +29,43 @@ self.addEventListener('activate', (event) => {
     )
   );
   self.clients.claim();
+});
+
+// Listen for messages from the app (notification triggers)
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SHOW_NOTIFICATION') {
+    const { title, body, tag } = event.data;
+    self.registration.showNotification(title, {
+      body,
+      icon: '/icons/icon-192.png',
+      badge: '/icons/icon-192.png',
+      tag: tag || 'abyssinia-reminder',
+      vibrate: [200, 100, 200, 100, 200],
+      requireInteraction: true,
+      actions: [
+        { action: 'open', title: 'Open App' },
+        { action: 'dismiss', title: 'Dismiss' },
+      ],
+    });
+  }
+});
+
+// Handle notification click
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  if (event.action === 'dismiss') return;
+
+  event.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clients) => {
+      // Focus existing window or open new
+      for (const client of clients) {
+        if (client.url.includes(self.location.origin) && 'focus' in client) {
+          return client.focus();
+        }
+      }
+      return self.clients.openWindow('/reminders');
+    })
+  );
 });
 
 // Fetch — network-first for API, cache-first for static assets

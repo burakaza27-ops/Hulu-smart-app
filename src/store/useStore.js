@@ -86,6 +86,24 @@ const useStore = create((set, get) => ({
   })),
   unreadCount: () => get().notifications.filter(n => !n.read).length,
 
+  // ===== Reminders =====
+  reminders: persisted.reminders ?? [],
+  addReminder: (r) => set((state) => {
+    const newReminders = [{ ...r, id: Date.now(), createdAt: new Date().toISOString() }, ...state.reminders];
+    _persistEncrypted({ reminders: newReminders });
+    return { reminders: newReminders };
+  }),
+  deleteReminder: (id) => set((state) => {
+    const newReminders = state.reminders.filter(r => r.id !== id);
+    _persistEncrypted({ reminders: newReminders });
+    return { reminders: newReminders };
+  }),
+  toggleReminderDone: (id) => set((state) => {
+    const newReminders = state.reminders.map(r => r.id === id ? { ...r, done: !r.done } : r);
+    _persistEncrypted({ reminders: newReminders });
+    return { reminders: newReminders };
+  }),
+
   // ===== Splash seen =====
   splashSeen: persisted.splashSeen ?? false,
   setSplashSeen: () => { _persistEncrypted({ splashSeen: true }); set({ splashSeen: true }); },
@@ -115,6 +133,7 @@ async function _persistEncrypted(partial) {
         language: data.language ?? useStore.getState().language,
         theme: data.theme ?? useStore.getState().theme,
         splashSeen: data.splashSeen ?? useStore.getState().splashSeen,
+        reminders: data.reminders ?? useStore.getState().reminders,
         _hydrated: true,
       });
     }

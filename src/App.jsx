@@ -19,6 +19,7 @@ import ScanQR from './pages/ScanQR';
 import TopUp from './pages/TopUp';
 import ATMWithdraw from './pages/ATMWithdraw';
 import TransactionDetail from './pages/TransactionDetail';
+import Reminders from './pages/Reminders';
 import ToastContainer from './components/Toast';
 import ErrorBoundary from './components/ErrorBoundary';
 import AppShield from './components/AppShield';
@@ -61,6 +62,7 @@ function AnimatedRoutes() {
           <Route path="/topup" element={<TopUp />} />
           <Route path="/atm-withdraw" element={<ATMWithdraw />} />
           <Route path="/transaction" element={<TransactionDetail />} />
+          <Route path="/reminders" element={<Reminders />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </motion.div>

@@ -29,7 +29,9 @@
   color: var(--text-muted);
   transition: color 0.25s;
   position: relative;
-  padding: 4px 12px;
+  padding: 4px 6px;
+  min-width: 0;
+  flex: 1;
 }
 
 .nav-item.active {

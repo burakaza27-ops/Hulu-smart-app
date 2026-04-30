@@ -10,6 +10,7 @@ const translations = {
   'nav.legal': { en: "Legal AI", am: "ህግ AI", om: "Seeraa AI", ti: "ሕጊ AI" },
   'nav.diaspora': { en: "Diaspora", am: "ዳያስፖራ", om: "Biyyaa Alaa", ti: "ዲያስፖራ" },
   'nav.inherit': { en: "Inherit", am: "ውርስ", om: "Dhaalaa", ti: "ውርሻ" },
+  'nav.reminders': { en: "Reminders", am: "ማስታወሻ", om: "Yaadachiisa", ti: "ማዘኻኸሪ" },
   'nav.more': { en: "More", am: "ተጨማሪ", om: "Dabalataa", ti: "ተወሳኺ" },
 
   // ===== Dashboard =====
