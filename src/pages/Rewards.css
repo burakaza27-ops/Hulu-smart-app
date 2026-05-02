@@ -1,0 +1,173 @@
+.rewards-container {
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.rewards-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+}
+
+.rewards-hero {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.points-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 195, 33, 0.2) 0%, transparent 70%);
+  padding: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 195, 33, 0.2);
+}
+
+.points-display span {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.points-display h2 {
+  font-size: 48px;
+  font-weight: 800;
+  color: #FFC321;
+  text-shadow: 0 0 20px rgba(255, 195, 33, 0.4);
+  margin: 8px 0;
+}
+
+.tier-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 195, 33, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: #FFC321;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.rewards-progress {
+  margin: 0 20px 32px 20px;
+  padding: 20px !important;
+  border-radius: 16px !important;
+}
+
+.rp-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.rp-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.rp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FFC321, #E5A900);
+  border-radius: 4px;
+}
+
+.rewards-section {
+  padding: 0 20px 32px 20px;
+}
+
+.rewards-section h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.redeem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.redeem-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 12px !important;
+  border-radius: 16px !important;
+  text-align: center;
+}
+
+.rc-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.redeem-card h4 {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.redeem-card span {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.rc-btn {
+  background: rgba(255, 195, 33, 0.1);
+  color: #FFC321;
+  border: 1px solid rgba(255, 195, 33, 0.3);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  width: 100%;
+}
+
+.earn-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.earn-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px !important;
+  border-radius: 16px !important;
+}
+
+.earn-icon {
+  font-size: 24px;
+  background: rgba(255,255,255,0.05);
+  width: 48px; height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.earn-info h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.earn-info p {
+  font-size: 12px;
+  color: var(--text-muted);
+}

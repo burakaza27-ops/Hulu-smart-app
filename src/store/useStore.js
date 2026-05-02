@@ -13,6 +13,13 @@ const persisted = readPersistedSync('boa-state');
 const useStore = create((set, get) => ({
   // ===== Hydration flag =====
   _hydrated: false,
+  
+  // ===== Auth =====
+  isAuthenticated: persisted.isAuthenticated ?? false,
+  setAuthenticated: (val) => {
+    _persistEncrypted({ isAuthenticated: val });
+    set({ isAuthenticated: val });
+  },
 
   // ===== Balance & Accounts =====
   balance: persisted.balance ?? 128450.75,
@@ -134,6 +141,7 @@ async function _persistEncrypted(partial) {
         theme: data.theme ?? useStore.getState().theme,
         splashSeen: data.splashSeen ?? useStore.getState().splashSeen,
         reminders: data.reminders ?? useStore.getState().reminders,
+        isAuthenticated: data.isAuthenticated ?? useStore.getState().isAuthenticated,
         _hydrated: true,
       });
     }

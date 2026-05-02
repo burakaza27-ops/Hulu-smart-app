@@ -19,7 +19,13 @@ import ScanQR from './pages/ScanQR';
 import TopUp from './pages/TopUp';
 import ATMWithdraw from './pages/ATMWithdraw';
 import TransactionDetail from './pages/TransactionDetail';
-import Reminders from './pages/Reminders';
+import Auth from './pages/Auth';
+import Hotels from './pages/Hotels';
+import Flights from './pages/Flights';
+import Equb from './pages/Equb';
+import Marketplace from './pages/Marketplace';
+import SavingsGoals from './pages/SavingsGoals';
+import Rewards from './pages/Rewards';
 import ToastContainer from './components/Toast';
 import ErrorBoundary from './components/ErrorBoundary';
 import AppShield from './components/AppShield';
@@ -34,6 +40,7 @@ const pageVariants = {
 function AnimatedRoutes() {
   const location = useLocation();
   const splashSeen = useStore((s) => s.splashSeen);
+  const isAuthenticated = useStore((s) => s.isAuthenticated);
 
   return (
     <AnimatePresence mode="wait">
@@ -47,7 +54,8 @@ function AnimatedRoutes() {
       >
         <Routes location={location}>
           <Route path="/splash" element={<Splash />} />
-          <Route path="/" element={splashSeen ? <Dashboard /> : <Navigate to="/splash" replace />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/" element={!isAuthenticated ? <Navigate to="/auth" replace /> : (splashSeen ? <Dashboard /> : <Navigate to="/splash" replace />)} />
           <Route path="/vault" element={<Vault />} />
           <Route path="/legal" element={<Legal />} />
           <Route path="/diaspora" element={<Diaspora />} />
@@ -63,6 +71,12 @@ function AnimatedRoutes() {
           <Route path="/atm-withdraw" element={<ATMWithdraw />} />
           <Route path="/transaction" element={<TransactionDetail />} />
           <Route path="/reminders" element={<Reminders />} />
+          <Route path="/hotels" element={<Hotels />} />
+          <Route path="/flights" element={<Flights />} />
+          <Route path="/equb" element={<Equb />} />
+          <Route path="/marketplace" element={<Marketplace />} />
+          <Route path="/savings-goals" element={<SavingsGoals />} />
+          <Route path="/rewards" element={<Rewards />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </motion.div>

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import {
   Send, Receipt, QrCode, ArrowUpRight, ArrowDownLeft,
   CreditCard, Zap, Droplets, Wifi, Plus, Eye, EyeOff, TrendingUp,
-  Star, ChevronRight
+  Star, ChevronRight, Building, Plane, ShoppingBag, Target, Award, Users, Mic
 } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -36,6 +36,7 @@ export default function Dashboard() {
   const transactions = useStore((s) => s.transactions);
   const [balanceVisible, setBalanceVisible] = useState(true);
   const [showAll, setShowAll] = useState(false);
+  const [isListening, setIsListening] = useState(false);
 
   const formatBalance = (num) => num.toLocaleString('en-US', { minimumFractionDigits: 2 });
 
@@ -48,9 +49,9 @@ export default function Dashboard() {
 
   const quickActions = [
     { icon: Send, label: t('dash.send'), color: '#FFC321', path: '/send-money' },
-    { icon: Receipt, label: t('dash.bills'), color: '#10B981', path: '/pay-bills' },
-    { icon: QrCode, label: t('dash.scan'), color: '#8B5CF6', path: '/scan' },
-    { icon: Plus, label: t('dash.topup'), color: '#F59E0B', path: '/topup' },
+    { icon: Plane, label: t('dash.flights', 'Flights'), color: '#10B981', path: '/flights' },
+    { icon: Building, label: t('dash.hotels', 'Hotels'), color: '#8B5CF6', path: '/hotels' },
+    { icon: ShoppingBag, label: t('dash.market', 'Market'), color: '#F59E0B', path: '/marketplace' },
   ];
 
   return (
@@ -228,6 +229,9 @@ export default function Dashboard() {
         </div>
         <div className="services-scroll">
           {[
+            { title: t('dash.equb', 'Digital Equb'), desc: t('dash.equbDesc', 'Social group savings'), gradient: 'linear-gradient(135deg, #1a2e1a 0%, #0d3e16 100%)', icon: '👥', path: '/equb' },
+            { title: t('dash.savings', 'Goal Savings'), desc: t('dash.savingsDesc', 'Save for your dreams'), gradient: 'linear-gradient(135deg, #2e2a1a 0%, #3e3416 100%)', icon: '🎯', path: '/savings-goals' },
+            { title: t('dash.rewards', 'Abyssinia Rewards'), desc: t('dash.rewardsDesc', 'Earn & redeem points'), gradient: 'linear-gradient(135deg, #2e1a2e 0%, #3e1646 100%)', icon: '🎁', path: '/rewards' },
             { title: t('dash.virtualVault'), desc: t('dash.vaultDesc'), gradient: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)', icon: '🔐', path: '/vault' },
             { title: t('dash.aiLegal'), desc: t('dash.legalDesc'), gradient: 'linear-gradient(135deg, #1a2e1a 0%, #0d3e16 100%)', icon: '⚖️', path: '/legal' },
             { title: t('dash.inheritance', 'Digital Inheritance'), desc: t('dash.inheritanceDesc', 'Smart contracts & beneficiaries'), gradient: 'linear-gradient(135deg, #2e2a1a 0%, #3e3416 100%)', icon: '🏛️', path: '/inheritance' },
@@ -296,6 +300,32 @@ export default function Dashboard() {
           })}
         </div>
       </motion.div>
+      {/* AI Voice Assistant Floating Button */}
+      <motion.button
+        className={`ai-voice-btn ${isListening ? 'listening' : ''}`}
+        style={{
+          position: 'fixed',
+          bottom: 100,
+          right: 20,
+          width: 56,
+          height: 56,
+          borderRadius: 28,
+          background: isListening ? '#EF4444' : 'linear-gradient(135deg, #FFC321 0%, #E5A900 100%)',
+          color: isListening ? '#fff' : '#1a1520',
+          border: 'none',
+          boxShadow: isListening ? '0 0 20px rgba(239, 68, 68, 0.6)' : '0 10px 20px rgba(255, 195, 33, 0.4)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 50,
+          cursor: 'pointer'
+        }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        onClick={() => setIsListening(!isListening)}
+      >
+        <Mic size={24} />
+      </motion.button>
     </motion.div>
   );
 }

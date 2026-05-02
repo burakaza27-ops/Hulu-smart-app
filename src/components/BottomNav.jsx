@@ -22,7 +22,7 @@ export default function BottomNav() {
   const pendingCount = reminders.filter(r => !r.done && new Date(r.scheduledAt) < new Date()).length;
 
   // Hide bottom nav on certain pages
-  const hiddenPaths = ['/splash'];
+  const hiddenPaths = ['/splash', '/auth', '/hotels', '/flights', '/equb', '/marketplace', '/savings-goals', '/rewards'];
   if (hiddenPaths.includes(location.pathname)) return null;
 
   return (

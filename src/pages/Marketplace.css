@@ -1,0 +1,128 @@
+.market-container {
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.market-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+}
+
+.market-hero {
+  padding: 0 20px 20px 20px;
+}
+
+.market-search input {
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(26, 21, 32, 0.8);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+.categories-grid {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 0 20px 24px 20px;
+  scrollbar-width: none;
+}
+
+.categories-grid::-webkit-scrollbar { display: none; }
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 80px;
+}
+
+.cat-icon {
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-item span {
+  font-size: 12px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.featured-section {
+  padding: 0 20px;
+}
+
+.featured-section h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.market-card {
+  padding: 0 !important;
+  overflow: hidden;
+  border-radius: 16px !important;
+}
+
+.market-img {
+  width: 100%;
+  height: 120px;
+}
+
+.market-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.market-info {
+  padding: 12px;
+}
+
+.merchant {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.market-info h4 {
+  font-size: 13px;
+  margin: 4px 0 12px 0;
+  line-height: 1.4;
+}
+
+.market-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.market-bottom .price {
+  font-weight: 700;
+  color: #FFC321;
+  font-size: 14px;
+}
+
+.buy-btn {
+  background: #FFC321;
+  color: #1a1520;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 12px;
+}
