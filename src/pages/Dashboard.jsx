@@ -49,9 +49,16 @@ export default function Dashboard() {
 
   const quickActions = [
     { icon: Send, label: t('dash.send'), color: '#FFC321', path: '/send-money' },
-    { icon: Plane, label: t('dash.flights', 'Flights'), color: '#10B981', path: '/flights' },
-    { icon: Building, label: t('dash.hotels', 'Hotels'), color: '#8B5CF6', path: '/hotels' },
-    { icon: ShoppingBag, label: t('dash.market', 'Market'), color: '#F59E0B', path: '/marketplace' },
+    { icon: Receipt, label: t('dash.bills'), color: '#10B981', path: '/pay-bills' },
+    { icon: QrCode, label: t('dash.scan'), color: '#8B5CF6', path: '/scan' },
+    { icon: Plus, label: t('dash.topup'), color: '#F59E0B', path: '/topup' },
+  ];
+
+  const moreActions = [
+    { icon: Building, label: t('dash.hotels', 'Hotels'), color: '#3B82F6', path: '/hotels' },
+    { icon: Plane, label: t('dash.flights', 'Flights'), color: '#06B6D4', path: '/flights' },
+    { icon: ShoppingBag, label: t('dash.market', 'Market'), color: '#EC4899', path: '/marketplace' },
+    { icon: CreditCard, label: t('hub.title', 'Services'), color: '#EF4444', path: '/service-hub' },
   ];
 
   return (
@@ -203,6 +210,25 @@ export default function Dashboard() {
         </div>
         <div className="quick-actions-grid">
           {quickActions.map((action, i) => {
+            const Icon = action.icon;
+            return (
+              <motion.button
+                key={i}
+                className="quick-action-btn glass-panel"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => action.path && navigate(action.path)}
+              >
+                <div className="qa-icon" style={{ background: `${action.color}20`, color: action.color }}>
+                  <Icon size={22} />
+                </div>
+                <span className="qa-label">{action.label}</span>
+              </motion.button>
+            );
+          })}
+        </div>
+        <div className="quick-actions-grid" style={{ marginTop: 10 }}>
+          {moreActions.map((action, i) => {
             const Icon = action.icon;
             return (
               <motion.button

@@ -134,3 +134,31 @@
   background: transparent;
   border: 1px solid rgba(255,255,255,0.2);
 }
+
+.goals-container .modal-field {
+  margin-bottom: 16px;
+}
+
+.goals-container .modal-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 6px;
+}
+
+.goals-container .modal-field input {
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.goals-container .modal-field input:focus {
+  border-color: #FFC321;
+}
