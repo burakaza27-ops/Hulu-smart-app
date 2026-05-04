@@ -105,7 +105,7 @@ export default function Equb() {
       <AnimatePresence>
         {paySuccess && (
           <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
-            style={{ position: 'fixed', top: 20, left: 20, right: 20, zIndex: 100, background: 'rgba(16,185,129,0.95)', padding: '14px 20px', borderRadius: 14, display: 'flex', alignItems: 'center', gap: 10, color: '#fff', fontWeight: 600, fontSize: 14 }}>
+            style={{ position: 'absolute', top: 20, left: 20, right: 20, zIndex: 100, background: 'rgba(16,185,129,0.95)', padding: '14px 20px', borderRadius: 14, display: 'flex', alignItems: 'center', gap: 10, color: '#fff', fontWeight: 600, fontSize: 14 }}>
             <CheckCircle size={18} /> Payment of {paySuccess.amountPerMonth.toLocaleString()} ETB to "{paySuccess.name}" successful!
           </motion.div>
         )}

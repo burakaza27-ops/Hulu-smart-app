@@ -139,7 +139,7 @@ export default function Marketplace() {
           <AnimatePresence>
             {cartCount > 0 && !showCart && (
               <motion.div initial={{ y: 100 }} animate={{ y: 0 }} exit={{ y: 100 }}
-                style={{ position: 'fixed', bottom: 20, left: 20, right: 20, background: 'linear-gradient(135deg, #FFC321, #E5A900)', borderRadius: 16, padding: '14px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 60, boxShadow: '0 10px 30px rgba(0,0,0,0.4)' }}
+                style={{ position: 'absolute', bottom: 20, left: 20, right: 20, background: 'linear-gradient(135deg, #FFC321, #E5A900)', borderRadius: 16, padding: '14px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 60, boxShadow: '0 10px 30px rgba(0,0,0,0.4)' }}
                 onClick={() => setShowCart(true)}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <ShoppingBag size={20} color="#1a1520" />
@@ -155,7 +155,7 @@ export default function Marketplace() {
       {/* Cart Sheet */}
       <AnimatePresence>
         {showCart && !orderSuccess && (
-          <motion.div className="equb-modal-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowCart(false)} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.7)', zIndex: 90, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', padding: 20 }}>
+          <motion.div className="equb-modal-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowCart(false)} style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.7)', zIndex: 90, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', padding: 20 }}>
             <motion.div className="glass-panel" initial={{ y: 200 }} animate={{ y: 0 }} exit={{ y: 200 }} onClick={e => e.stopPropagation()} style={{ width: '100%', maxWidth: 420, padding: 24, borderRadius: '24px 24px 20px 20px', maxHeight: '70vh', overflow: 'auto' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}><h3>Your Cart</h3><button onClick={() => setShowCart(false)} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer' }}><X size={20} /></button></div>
               {cartItems.length === 0 ? <p style={{ color: 'var(--text-muted)', textAlign: 'center', padding: 30 }}>Your cart is empty</p> : (

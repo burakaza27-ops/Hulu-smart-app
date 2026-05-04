@@ -68,7 +68,7 @@ export default function SavingsGoals() {
       <AnimatePresence>
         {successMsg && (
           <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
-            style={{ position: 'fixed', top: 20, left: 20, right: 20, zIndex: 100, background: 'rgba(16,185,129,0.95)', padding: '14px 20px', borderRadius: 14, display: 'flex', alignItems: 'center', gap: 10, color: '#fff', fontWeight: 600, fontSize: 14 }}>
+            style={{ position: 'absolute', top: 20, left: 20, right: 20, zIndex: 100, background: 'rgba(16,185,129,0.95)', padding: '14px 20px', borderRadius: 14, display: 'flex', alignItems: 'center', gap: 10, color: '#fff', fontWeight: 600, fontSize: 14 }}>
             <CheckCircle size={18} /> {successMsg}
           </motion.div>
         )}
@@ -112,7 +112,7 @@ export default function SavingsGoals() {
       <AnimatePresence>
         {showDeposit && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowDeposit(null)}
-            style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.7)', zIndex: 90, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', padding: 20 }}>
+            style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.7)', zIndex: 90, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', padding: 20 }}>
             <motion.div className="glass-panel" initial={{ y: 200 }} animate={{ y: 0 }} exit={{ y: 200 }} onClick={e => e.stopPropagation()}
               style={{ width: '100%', maxWidth: 420, padding: 24, borderRadius: '24px 24px 20px 20px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
@@ -138,7 +138,7 @@ export default function SavingsGoals() {
       <AnimatePresence>
         {showWithdraw && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowWithdraw(null)}
-            style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.7)', zIndex: 90, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', padding: 20 }}>
+            style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.7)', zIndex: 90, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', padding: 20 }}>
             <motion.div className="glass-panel" initial={{ y: 200 }} animate={{ y: 0 }} exit={{ y: 200 }} onClick={e => e.stopPropagation()}
               style={{ width: '100%', maxWidth: 420, padding: 24, borderRadius: '24px 24px 20px 20px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
@@ -157,7 +157,7 @@ export default function SavingsGoals() {
       <AnimatePresence>
         {showCreate && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setShowCreate(false)}
-            style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.7)', zIndex: 90, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', padding: 20 }}>
+            style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.7)', zIndex: 90, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', padding: 20 }}>
             <motion.div className="glass-panel" initial={{ y: 200 }} animate={{ y: 0 }} exit={{ y: 200 }} onClick={e => e.stopPropagation()}
               style={{ width: '100%', maxWidth: 420, padding: 24, borderRadius: '24px 24px 20px 20px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>

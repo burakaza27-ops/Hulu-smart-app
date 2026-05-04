@@ -331,7 +331,7 @@ export default function Dashboard() {
       <motion.button
         className={`ai-voice-btn ${isListening ? 'listening' : ''}`}
         style={{
-          position: 'fixed',
+          position: 'absolute',
           bottom: 100,
           right: 20,
           width: 56,

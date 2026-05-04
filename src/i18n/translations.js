@@ -52,6 +52,15 @@ const translations = {
   'dash.savingsDesc': { en: "Save for your dreams", am: "ለህልምዎ ይቆጥቡ", om: "Abjuu keetiif qusadhu", ti: "ንሕልምኻ ዕቖር" },
   'dash.rewards': { en: "Abyssinia Rewards", am: "የአቢሲኒያ ሽልማት", om: "Badhaasa Abyssinia", ti: "ሽልማት ኣቢሲንያ" },
   'dash.rewardsDesc': { en: "Earn & redeem points", am: "ነጥቦችን ይሰብስቡ", om: "Qabxii sassaabuu", ti: "ነጥቢታት ኣዋህልል" },
+  
+  // Feature Titles
+  'equb.heroTitle': { en: "Modern Social Saving", am: "ዘመናዊ ማህበራዊ ቁጠባ", om: "Qusannoo Hawaasummaa Ammayyaa", ti: "ዘመናዊ ማሕበራዊ ዕቋር" },
+  'equb.heroDesc': { en: "Join or create trusted Equb circles powered by Abyssinia smart contracts.", am: "በአቢሲኒያ ስማርት ኮንትራቶች የታገዙ እቁቦችን ይፍጠሩ ወይም ይቀላቀሉ።", om: "Equb amansiisaa Abyssinia dhaan hojjetu uumi ykn itti makami.", ti: "ብኣቢሲንያ ስማርት ኮንትራታት ዝተደገፉ እቁባት ፍጠር ወይ ተጸንበር።" },
+  'market.title': { en: "Marketplace", am: "ገበያ", om: "Gabaa", ti: "ዕዳጋ" },
+  'flights.title': { en: "Flight Booking", am: "የበረራ ትኬት", om: "Tikeetii Xiyyaaraa", ti: "ትኬት በረራ" },
+  'hotels.title': { en: "Hotel Booking", am: "የሆቴል ምዝገባ", om: "Galmee Hoteelaa", ti: "ምዝገባ ሆቴል" },
+  'savings.title': { en: "Savings Goals", am: "የቁጠባ ግቦች", om: "Galma Qusannoo", ti: "ሸቶታት ዕቋር" },
+  'rewards.title': { en: "Abyssinia Rewards", am: "የአቢሲኒያ ሽልማቶች", om: "Badhaasa Abyssinia", ti: "ሽልማታት ኣቢሲንያ" },
 
   // ===== Service Hub =====
   'hub.title': { en: "Service Hub", am: "አገልግሎት ማዕከል", om: "Wiirtuu Tajaajilaa", ti: "ማእከል ኣገልግሎት" },
