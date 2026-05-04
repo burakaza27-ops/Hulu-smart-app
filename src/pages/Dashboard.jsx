@@ -229,6 +229,7 @@ export default function Dashboard() {
         </div>
         <div className="services-scroll">
           {[
+            { title: t('hub.title', 'Service Hub'), desc: t('hub.subtitle', 'Pay anything in Ethiopia'), gradient: 'linear-gradient(135deg, #2e1a1a 0%, #3e1616 100%)', icon: '🏢', path: '/service-hub' },
             { title: t('dash.equb', 'Digital Equb'), desc: t('dash.equbDesc', 'Social group savings'), gradient: 'linear-gradient(135deg, #1a2e1a 0%, #0d3e16 100%)', icon: '👥', path: '/equb' },
             { title: t('dash.savings', 'Goal Savings'), desc: t('dash.savingsDesc', 'Save for your dreams'), gradient: 'linear-gradient(135deg, #2e2a1a 0%, #3e3416 100%)', icon: '🎯', path: '/savings-goals' },
             { title: t('dash.rewards', 'Abyssinia Rewards'), desc: t('dash.rewardsDesc', 'Earn & redeem points'), gradient: 'linear-gradient(135deg, #2e1a2e 0%, #3e1646 100%)', icon: '🎁', path: '/rewards' },

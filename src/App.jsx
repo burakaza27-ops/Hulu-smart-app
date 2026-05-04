@@ -19,6 +19,7 @@ import ScanQR from './pages/ScanQR';
 import TopUp from './pages/TopUp';
 import ATMWithdraw from './pages/ATMWithdraw';
 import TransactionDetail from './pages/TransactionDetail';
+import Reminders from './pages/Reminders';
 import Auth from './pages/Auth';
 import Hotels from './pages/Hotels';
 import Flights from './pages/Flights';
@@ -26,6 +27,8 @@ import Equb from './pages/Equb';
 import Marketplace from './pages/Marketplace';
 import SavingsGoals from './pages/SavingsGoals';
 import Rewards from './pages/Rewards';
+import ServiceHub from './pages/ServiceHub';
+import PaymentFlow from './pages/PaymentFlow';
 import ToastContainer from './components/Toast';
 import ErrorBoundary from './components/ErrorBoundary';
 import AppShield from './components/AppShield';
@@ -77,6 +80,8 @@ function AnimatedRoutes() {
           <Route path="/marketplace" element={<Marketplace />} />
           <Route path="/savings-goals" element={<SavingsGoals />} />
           <Route path="/rewards" element={<Rewards />} />
+          <Route path="/service-hub" element={<ServiceHub />} />
+          <Route path="/payment" element={<PaymentFlow />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </motion.div>
