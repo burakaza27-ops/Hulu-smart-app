@@ -11,11 +11,8 @@ function AdeyAbebaLogo({ size = 80, color = '#FFC321', className = '' }) {
     <svg className={className} width={size} height={size} viewBox="0 0 100 100" fill="none">
       <g transform="translate(50,50)">
         {[0, 60, 120, 180, 240, 300].map((angle) => (
-          <ellipse key={angle} cx="0" cy="-22" rx="12" ry="22" fill={color} transform={`rotate(${angle})`} />
+          <polygon key={angle} points="0,-8 -11.5,-28 0,-48 11.5,-28" fill={color} transform={`rotate(${angle})`} />
         ))}
-        <circle cx="0" cy="0" r="10" fill={color} />
-        <circle cx="0" cy="0" r="6" fill="#0A0A0B" />
-        <circle cx="0" cy="0" r="3" fill={color} />
       </g>
     </svg>
   );

@@ -17,7 +17,6 @@ function AdeyAbebaLogo({ size = 80, color = '#FFC321', className = '' }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      {/* Outer glow */}
       <defs>
         <radialGradient id="petal-grad" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stopColor={color} stopOpacity="1" />
@@ -32,22 +31,14 @@ function AdeyAbebaLogo({ size = 80, color = '#FFC321', className = '' }) {
         </filter>
       </defs>
       <g filter="url(#logo-glow)" transform="translate(50,50)">
-        {/* 6 petals */}
         {[0, 60, 120, 180, 240, 300].map((angle) => (
-          <ellipse
+          <polygon
             key={angle}
-            cx="0"
-            cy="-22"
-            rx="12"
-            ry="22"
+            points="0,-8 -11.5,-28 0,-48 11.5,-28"
             fill="url(#petal-grad)"
             transform={`rotate(${angle})`}
           />
         ))}
-        {/* Center circle */}
-        <circle cx="0" cy="0" r="10" fill={color} />
-        <circle cx="0" cy="0" r="6" fill="#0A0A0B" />
-        <circle cx="0" cy="0" r="3" fill={color} />
       </g>
     </svg>
   );
